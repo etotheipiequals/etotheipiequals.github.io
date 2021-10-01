@@ -31,8 +31,7 @@ Mexican Physical Society
 September 30, 2021
 """)
 
-#p.spanCenterImage("./figures/blockade.jpg") # lower res
-p.spanCenterImage("./figures/Blockade.png", height = 200)
+p.spanCenterImage("./figures/Blockade_0.png", height = 200)
 
 
 ########################################
@@ -124,7 +123,7 @@ p.leftText(r"""
 
 
 """)
-p.rightImage("./figures/Blockade.png", height = 300)
+p.rightImage("./figures/Blockade_0.png", height = 300)
 
 
 
@@ -685,7 +684,7 @@ p.newSlide()
 p.title("Rydberg blockade: Dynamics")
 
 
-p.spanCenterImage("./figures/Blockade_patterns.JPG", height = 400,
+p.spanCenterImage("./figures/Blockade_1.png", height = 300,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
