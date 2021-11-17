@@ -13218,7 +13218,7 @@ to time in years and CO2 in ppm. Make a plot.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Some missing data are at set at negative values. Let's filter those out.</p>
+<p>Some missing data are set at negative values. Let's filter those out.</p>
 
 </div>
 </div>
@@ -13353,9 +13353,10 @@ For example for each decade.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next, we fit the data. We could fit all the data for select regions.
-Here we fit each year and multiple years (for fit_range = integer &gt; 1).
-In the right plot we look at how each parameter in the fit varies over time.</p>
+<p>Next, we fit the data. We could fit all the data, or we could select data between particular dates.
+Below we fit each year (or multiple years by seeting fit_range to an integer greater than 1).
+In the right hand plots, we look at how each parameter in the fit varies year to year.
+For example, we can look at whether the amplitude or phase of seasonal variation changes.</p>
 
 </div>
 </div>
@@ -13451,17 +13452,16 @@ In the right plot we look at how each parameter in the fit varies over time.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Next, we shall look at the long term trend. 
-Any department from long term trend should show
+<p>Now, we shall look at the long term trend. 
+Any departure from trend should show
 up in residuals between the data and the fit.
-The secular trend can be fit to a quadratic but we need
-at least 2 decades of data to capture the curvature,
-and even then we need to be careful.
-Below it is set to fit between 2000 and 2020, but
-if instead we fit between 1990 and 2010 we might conclude
-that things are improving!
-3 decades from 1990 to 2020 gives similar results to
-2000 to 2020.</p>
+The secular trend is fit to a quadratic but we need
+at least 2 decades of data to capture the curvature.
+Even then we need to be careful.
+Below a fit is made on data between 2000 and 2020.
+If instead we fit between 1990 and 2010 the curve is very different!
+But three decades from 1990 to 2020 gives similar results to
+2000 to 2020 which gives some confidence.</p>
 
 </div>
 </div>
@@ -13639,7 +13639,7 @@ that things are improving!
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now, go back to decadal plot and add fit.
+<p>Now, go back to decadal plot and add a fit.
 This time rather than using pandas we use numpy to
 extract beginning and end indices for each decade.</p>
 
@@ -13730,8 +13730,9 @@ extract beginning and end indices for each decade.</p>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, plot with seasonal variation subjected compare to fit
-(out ot 2030) and add Earth Summit and key COP markers.</p>
+<p>Finally, we repeat this plot with the seasonal variation removed and compare to the fit.
+We project the fit out to 2030. Will future data come in below this prediction?
+As a reminder of politics, we add markers for Earth Summit and key COPs.</p>
 
 </div>
 </div>
