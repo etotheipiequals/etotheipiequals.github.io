@@ -13191,7 +13191,7 @@ to time in years and CO2 in ppm. Make a plot.</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f6252f42e10&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fd8fb834dd0&gt;]</pre>
 </div>
 
 </div>
@@ -13252,7 +13252,7 @@ to time in years and CO2 in ppm. Make a plot.</p>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>[&lt;matplotlib.lines.Line2D at 0x7f6252ecc3d0&gt;]</pre>
+<pre>[&lt;matplotlib.lines.Line2D at 0x7fd8fb76fa50&gt;]</pre>
 </div>
 
 </div>
@@ -13354,8 +13354,8 @@ For example for each decade.</p>
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Next, we fit the data. We could fit all the data, or we could select data between particular dates.
-Below we fit each year (or multiple years by setting fit_range to an integer greater than 1).
-In the right hand plots, we look at how each parameter in the fit varies year to year.
+Below we fit each year (or multiple years by setting fit range to an integer greater than 1).
+In the right hand plots, we look at how each parameter in the fit varies year on year.
 For example, we can look at whether the amplitude or phase of seasonal variation changes.</p>
 
 </div>
@@ -13648,7 +13648,7 @@ extract beginning and end indices for each decade.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="n">x_all</span><span class="p">)</span>
@@ -13697,7 +13697,7 @@ extract beginning and end indices for each decade.</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[10]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
 
 
 
@@ -13739,7 +13739,7 @@ As a reminder of politics, we add markers for Earth Summit and key COPs.</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_s</span> <span class="o">=</span> <span class="n">y_all</span><span class="o">-</span><span class="p">(</span><span class="n">D</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x_all</span><span class="o">+</span><span class="n">E</span><span class="p">)</span><span class="o">+</span><span class="n">F</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x_all</span><span class="o">+</span><span class="n">G</span><span class="p">))</span>
