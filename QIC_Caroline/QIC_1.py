@@ -27,7 +27,7 @@ p.spanCenterText(r"""
 
 **Quantum information and computing** 
 
-** QIC **
+** QIC.1 Ph30, 14.00 Monday Jan 10, 2022 **
 
 """, fontSize = 1.0)
 
@@ -106,6 +106,7 @@ p.leftText(r"""
 * QIC.1 Notes 
 
  * *Circuit Quantum Electrodynamics*, A Blais, AL Grimsmo, SM Girvin, A Wallraff, 
+Rev Mod Phys **93**, 25005 (2021)
 https://arxiv.org/abs/2005.12667
 
 """, fontSize = 0.5)
@@ -181,14 +182,18 @@ p.title("Qubit (two-level system): Examples ")
 
 p.makeGrid(4,4)
 
-p.gridImage(0,2,"./QIC_Figures/QIC1_superconducting_3.jpg", height = 100)
-p.gridImage(0,3,"./QIC_Figures/QIC1_superconducting_1.png", height = 100)
+p.gridImage(0,1,"./QIC_Figures/QIC1_superconducting_3.jpg", height = 100, textBelow="Google's Sycamore processor", fontSize = 0.5)
 
-p.gridImage(1,2,"./QIC_Figures/QIC1_ions_1.jpg", height = 100)
-p.gridImage(1,3,"./QIC_Figures/QIC1_ions_2.png", height = 100)
+p.gridImage(0,2,"./QIC_Figures/QIC1_superconducting_3.png", height = 100, textBelow=" Qubits (red): tuning (dark blue); control (purple). Coupling (orange). Read-out (blue). https://arxiv.org/abs/1801.07904", fontSize = 0.5)
 
-p.gridImage(2,3,"./QIC_Figures/QIC11_Atom_QC_Review_2.png", height = 100)
+p.gridImage(0,3,"./QIC_Figures/QIC1_superconducting_1.png", height = 100, textBelow="Blais et al, Rev Mod Phys **93**, 25005 (2021)", fontSize = 0.5)
 
+
+
+p.gridImage(1,2,"./QIC_Figures/QIC1_ions_1.jpg", height = 100, textBelow="Honeywell", fontSize = 0.5)
+p.gridImage(1,3,"./QIC_Figures/QIC1_ions_2.png", height = 100, textBelow="Chris Monroe, Duke and IonQ", fontSize = 0.5)
+
+p.gridImage(2,3,"./QIC_Figures/QIC1_Rydberg_array.png", height = 100, textBelow="Barredo et al, Nature  **561**, 79 (2018)", fontSize = 0.5)
 
 ########################################
 #############  New slide  ##############
@@ -202,9 +207,8 @@ p.makeGrid(4,4)
 p.gridImage(0,2,"./QIC_Figures/QIC1_pol_left_right.png", height = 100)
 p.gridImage(0,3,"./QIC_Figures/QIC1_photons_1.png", height = 100)
 
-p.gridImage(1,3,"./QIC_Figures/QIC1_semi.png", height = 100)
-
-
+p.gridImage(1,2,"./QIC_Figures/QIC1_semi.png", height = 100,  textBelow="Borjan et al, Nature  **577**, 195 (2020)", fontSize = 0.5)
+p.gridImage(1,3,"./QIC_Figures/QIC1_Si_2_qubit_0.png", height = 100,  textBelow="Mills et al, arXiv:2111.1937", fontSize = 0.5)
 
 ########################################
 ############# NEW slide ############## Grid with text 
@@ -224,7 +228,7 @@ Slide 29 in *No_Exponential_is_Forever* at the International Solid State Circuit
 p.gridImage(0,2,"./Figures/Moores_law_48_years.png", height = 100)
 p.gridImage(0,3,"./QIC_Figures/QIC1_feature_size.png", height = 100)
 
-p.gridImage(1,3,"./Figures/Moores_law_energy.png", height = 100)
+p.gridImage(1,3,"./Figures/Moores_law_energy.png", height = 100,  textBelow="SIA/SRC report 2016", fontSize = 0.5)
 p.gridImage(2,2,"./Figures/Feynman_85.png", height = 100)
 p.gridImage(2,3,"./QIC_Figures/QIC1_energy_2.png", height = 100)
 
@@ -260,68 +264,6 @@ Summary
 
 """, fontSize = 1.0)
 p.rightImage("./QIC_Figures/QIC1_summary.png", height = 400)
-
-
-########################################
-############# QUIZ  ##############
-########################################
-
-p.newQuiz(
-    questionImage="./Figures/Bohr.jpg",
-    questionText=r"""## Which of the following are superpositions of the form, $\vert \psi\rangle = \textstyle{1\over\sqrt{2}}\left( \vert 0 \rangle \pm  \vert 1 \rangle \right)$ ?""",
-    answersImage=[
-        "./Figures/2s12m12.png",
-        "./Figures/2p12m12.png",
-        "./Figures/1s12m12.png",
-        "./Figures/2s12m12+2p12m32.png",
-        "./Figures/2s12m12+2p12m12.png",
-        "./Figures/2p12m32.png",
-    ],
-)
-
-########################################
-############# QUIZ slide ##############
-########################################
-
-p.newQuiz(
-    questionText="#The amount of information that can be stored in one qubit is",
-    answersText=[r"One bit.",
-                 r"Two bits.",
-                 r"Infinite.",
-                 r"In depends on the measurement."]
-)
-
-
-########################################
-############# QUIZ slide ##############
-########################################
-
-p.newQuiz(
-    questionText="#The amount of information that can be retrieved from one qubit is",
-    answersText=[r"One bit.",
-                 r"Two bits.",
-                 r"Infinite.",
-                 r"In depends on the measurement."]
-)
-
-
-########################################
-#############  New slide  ##############
-########################################
-
-p.newSlide()
-
-p.title("What Richard Feynman said!")
-
-p.leftText(r"""
-... you'll get down a drain,
-
-... nobody has yet escaped,
-
-... nobody knows how it can be like that.
-           
-           """)
-p.rightIFrame("https://www.youtube.com/embed/41Jc75tQcB0?start=509&end=521", height=315)
 
 
 

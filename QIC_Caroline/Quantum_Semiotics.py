@@ -31,7 +31,7 @@ Mexican Physical Society
 September 30, 2021
 """)
 
-p.spanCenterImage("./figures/Blockade_0.png", height = 200)
+p.spanCenterImage("./Figures/Blockade_0.png", height = 200)
 
 
 ########################################
@@ -45,7 +45,7 @@ p.leftText(r"""
 * Durham - 400 km North of London
 
 """)
-p.rightImage("./figures/Location_Pop_Map.jpg",
+p.rightImage("./Figures/Location_Pop_Map.jpg",
             textBelow="**Figure**:  England population density. ")
 
 
@@ -67,7 +67,7 @@ p.leftText(r"""
 
 * THz imaging, Downes et al, Phys. Rev. X **10**, 011027 (2020) 
 """)
-p.rightImage("./figures/Rydberg_book_QO_THz.jpg", height = 450)
+p.rightImage("./Figures/Rydberg_book_QO_THz.jpg", height = 450)
 
 ########################################
 #############  New slide  ############## What I do? Teaching 
@@ -102,7 +102,7 @@ p.leftText(r"""
 * 2019 - Quantum information and computing
 
 """)
-p.rightImage("./figures/QIC_2004.jpg", height = 300)
+p.rightImage("./Figures/QIC_2004.jpg", height = 300)
 
 ########################################
 #############  New slide  ##############
@@ -123,7 +123,7 @@ p.leftText(r"""
 
 
 """)
-p.rightImage("./figures/Blockade_0.png", height = 300)
+p.rightImage("./Figures/Blockade_0.png", height = 300)
 
 
 
@@ -134,7 +134,7 @@ p.rightImage("./figures/Blockade_0.png", height = 300)
 p.newSlide()
 p.title("Quantum computing: Bits vs. Qubits")
 
-p.spanCenterImage("./figures/Bit_vs_Qubit.JPG", height = 200,
+p.spanCenterImage("./Figures/Bit_vs_Qubit.JPG", height = 200,
             textBelow="**Figure**:  Classical bit vs. qubit (can be 0 and 1 but only if we do not look!) ")
 
 p.spanCenterText(r"""
@@ -224,14 +224,14 @@ p.makeGrid(3,3)
 p.gridText(0,0,r"""
 Qubit stores infinite information but we can only see one bit
 """)
-p.gridImage(0,1,"./figures/Bit_vs_Qubit.JPG", height = 100)
+p.gridImage(0,1,"./Figures/Bit_vs_Qubit.JPG", height = 100)
 
 
 p.gridText(1,0,r"""
 $~~$  *If you can see it, then it is not quantum*
 """)
 
-p.gridImage(1,1,"./figures/Nikola.jpg", height = 100)
+p.gridImage(1,1,"./Figures/Nikola.jpg", height = 100)
 
 
 
@@ -239,7 +239,7 @@ p.gridText(2,0,r"""
 $~~$  Something hidden?
 """)
 
-p.gridImage(2,1,"./figures/cylinder.jpg", height = 100)
+p.gridImage(2,1,"./Figures/cylinder.jpg", height = 100)
 
 
 ########################################
@@ -247,7 +247,7 @@ p.gridImage(2,1,"./figures/cylinder.jpg", height = 100)
 ########################################
 
 p.newQuiz(
-    questionImage="./figures/Bohr.jpg",
+    questionImage="./Figures/Bohr.jpg",
     questionText=r"""## Which of the following are superpositions of the form, $\vert \psi\rangle = \textstyle{1\over\sqrt{2}}\left( \vert 0 \rangle \pm  \vert 1 \rangle \right)$ ?""",
     answersImage=[
         "./figures/2s12m12.png",
@@ -269,27 +269,27 @@ p.title("Part 2: What is semiotics?")
 p.leftText(r"""
 ** The doctrine of signs ** (or symbols)
 """)
-p.rightImage("./figures/Locke.jpg", height = 300)
+p.rightImage("./Figures/Locke.jpg", height = 300)
 
 p.makeGrid(4,4)
 p.gridText(0,0,r"""
 $~~$ Language
 """)
-p.gridImage(0,1,"./figures/Alphabets.JPG", height = 200)
+p.gridImage(0,1,"./Figures/Alphabets.JPG", height = 200)
 p.gridText(0,2,r"""
 $~~$ Maps  
 """)
-p.gridImage(0,3,"./figures/Maps.JPG", height = 140)
+p.gridImage(0,3,"./Figures/Maps.JPG", height = 140)
 
 p.gridText(1,0,r"""
 $~~$  Computing
 """)
-p.gridImage(1,1,"./figures/Computing_Punch_Card_Dynamicland.JPG", height = 100)
+p.gridImage(1,1,"./Figures/Computing_Punch_Card_Dynamicland.JPG", height = 100)
 
 p.gridText(1,2,r"""
 $~~$  Physics
 """)
-p.gridImage(1,3,"./figures/Equations_Maxwell_StandardModel.JPG", height = 200)
+p.gridImage(1,3,"./Figures/Equations_Maxwell_StandardModel.JPG", height = 200)
 
 
 ########################################
@@ -303,12 +303,12 @@ p.makeGrid(3,3)
 p.gridText(0,0,r"""
 $~~$ ** Images in physics **
 """)
-p.gridImage(0,1,"./figures/Leonardo.jpg", height = 300)
+p.gridImage(0,1,"./Figures/Leonardo.jpg", height = 300)
 
 p.gridText(1,0,r"""
 $~~$  Diagrammatic reasoning
 """)
-p.gridImage(0,2,"./figures/Leonardo_Sketches.JPG", height = 200)
+p.gridImage(0,2,"./Figures/Leonardo_Sketches.JPG", height = 200)
 
 
 '''
@@ -349,7 +349,7 @@ $a =\cos \frac{\theta}{2}$, $b={\rm e}^{{\rm i}\phi}\sin\frac{\theta}{2}$
 ** The Bloch sphere **
 
 """)
-p.rightImage("./figures/BlochSphere1.jpg", height = 200, 
+p.rightImage("./Figures/BlochSphere1.jpg", height = 200, 
             textBelow=r"**Figure**:  Bloch sphere representation of a qubit: Bloch vector (blue). Single-qubit gates performed as rotations about a torque vector, $\boldsymbol{\hat{n}}$, (yellow).")
 
 ########################################
@@ -363,7 +363,7 @@ p.leftImage("./equations/R_n.png", height = 70,
 #            textAbove="**Qubit rotation matrix**",
            )
 
-p.rightImage("./figures/Two_level_system.JPG"#, #height = 300,
+p.rightImage("./Figures/Two_level_system.JPG"#, #height = 300,
 #            textAbove="**Two level system**"
 #            textBelow="**Two level system** "
             )
@@ -394,7 +394,7 @@ p.leftText(r"""
 
 
 """)
-p.rightIFrame("./figures/Bloch_Ry.html", height=600)
+p.rightIFrame("./Figures/Bloch_Ry.html", height=600)
 
 
 ########################################
@@ -406,7 +406,7 @@ p.title("Quantum information and computing")
 p.leftText(r"""
 ** The perfect Bloch sphere? **
 """)
-p.rightImage("./figures/BlochSphere_Bad.JPG", height = 300)
+p.rightImage("./Figures/BlochSphere_Bad.JPG", height = 300)
 
 p.spanCenterText(r"""   
 What is the problem? Let's look at two-qubit states.
@@ -437,7 +437,7 @@ $\vert\Psi^{\pm}\rangle
 """)
 
 
-p.rightImage("./figures/Bell.jpg", height = 300,
+p.rightImage("./Figures/Bell.jpg", height = 300,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
@@ -459,7 +459,7 @@ $\vert\Psi^{\pm}\rangle
 """)
 
 
-p.rightImage("./figures/Quantum_Crypt_PhysWorld.jpg", height = 400,
+p.rightImage("./Figures/Quantum_Crypt_PhysWorld.jpg", height = 400,
 #            textAbove="**Colour wheel**",
 #            textBelow="**Colour wheel** Amplitude proportional to transparency. Phase given by colour."
             )
@@ -474,7 +474,7 @@ p.leftText(r"""
 Apply an ${\sf R}_y$ rotation to both qubits.
 """)
 
-p.rightImage("./figures/Bloch_Ry.png", height = 200, 
+p.rightImage("./Figures/Bloch_Ry.png", height = 200, 
             textBelow=r"**Figure**:  Bloch sphere $\times 2$?")
 
 
@@ -518,7 +518,7 @@ p.leftImage("./equations/rho_uvw.png", height = 70,
             textBelow="$(u,v,w)$ are the components of the Bloch vector. All real.")
 
 
-p.rightImage("./figures/Colour_Wheel.JPG", height = 150,
+p.rightImage("./Figures/Colour_Wheel.JPG", height = 150,
 #            textAbove="**Colour wheel**",
             textBelow="**Colour wheel** Amplitude proportional to transparency. Phase given by colour.")
 
@@ -531,7 +531,7 @@ p.newSlide()
 p.title("Bloch sphere vs the density matrix")
 
 
-p.spanCenterIFrame("./figures/BlochDM_Ry_landscape.html", height=600)
+p.spanCenterIFrame("./Figures/BlochDM_Ry_landscape.html", height=600)
 
 ########################################
 #############  New slide  ##############
@@ -541,7 +541,7 @@ p.newSlide()
 p.title("Bloch sphere vs the density matrix")
 
 
-p.spanCenterIFrame("./figures/BlochDM_Rx_landscape.html", height=600)
+p.spanCenterIFrame("./Figures/BlochDM_Rx_landscape.html", height=600)
 
 ########################################
 #############  New slide  ##############
@@ -551,7 +551,7 @@ p.newSlide()
 p.title("Decoherence: Bloch sphere vs the density matrix")
 
 
-p.spanCenterIFrame("./figures/BlochDM_T2_landscape.html", height=600)
+p.spanCenterIFrame("./Figures/BlochDM_T2_landscape.html", height=600)
 
 ########################################
 #############  New slide  ##############
@@ -561,7 +561,7 @@ p.newSlide()
 p.title("Irrotationality of the Bell state")
 
 
-p.rightIFrame("./figures/Bell_Ry_dots.html", height=600)
+p.rightIFrame("./Figures/Bell_Ry_dots.html", height=600)
 #p.spanCenterIFrame("./figures/Bell_Ry_dots.html", height=600)
 
 ########################################
@@ -579,7 +579,7 @@ ${\small \vert 00\rangle,~
 \vert 11\rangle}$
 """)
 
-p.spanCenterImage("./figures/Bell_irrotational.JPG", height = 200,
+p.spanCenterImage("./Figures/Bell_irrotational.JPG", height = 200,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
@@ -602,8 +602,8 @@ $\vert\Psi^+\rangle
  =  -\textstyle{{\rm i}\over \sqrt{2}}(\vert 01 \rangle + \vert 10 \rangle)$
 """)
 
-p.rightIFrame("./figures/Bell_Rx_dots.html", height=600)
-#p.spanCenterIFrame("./figures/Bell_Ry_dots.html", height=600)
+p.rightIFrame("./Figures/Bell_Rx_dots.html", height=600)
+#p.spanCenterIFrame("./Figures/Bell_Ry_dots.html", height=600)
 
 
 ########################################
@@ -615,7 +615,7 @@ p.newSlide()
 p.title("Experimental example: Rydberg blockade")
 
 
-p.spanCenterImage("./figures/QIC17_Blockade_6.png", height = 400,
+p.spanCenterImage("./Figures/QIC17_Blockade_6.png", height = 400,
             textBelow=r"",
            )
 
@@ -627,7 +627,7 @@ p.newSlide()
 
 p.title("Experimental example: Rydberg blockade")
 
-p.leftImage("./figures/Blockade_radius.JPG", height = 300,
+p.leftImage("./Figures/Blockade_radius.JPG", height = 300,
 #            textAbove="**Two level system**"
 #            textBelow="**Two level system** "
             )
@@ -672,7 +672,7 @@ p.leftText(r"""
 
 """)
 
-p.rightIFrame("./figures/Blockade_dots.html", height=600)
+p.rightIFrame("./Figures/Blockade_dots.html", height=600)
 #p.spanCenterIFrame("./figures/Bell_Ry_dots.html", height=600)
 
 
@@ -684,7 +684,7 @@ p.newSlide()
 p.title("Rydberg blockade: Dynamics")
 
 
-p.spanCenterImage("./figures/Blockade_1.png", height = 300,
+p.spanCenterImage("./Figures/Blockade_1.png", height = 300,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
@@ -696,12 +696,12 @@ p.spanCenterImage("./figures/Blockade_1.png", height = 300,
 p.newSlide()
 p.title("Endless examples!")
 
-p.spanCenterImage("./figures/QFT_circuit_diagram.png", height = 100,
+p.spanCenterImage("./Figures/QFT_circuit_diagram.png", height = 100,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
 
-p.spanCenterImage("./figures/QFT_dots.png", height = 400,
+p.spanCenterImage("./Figures/QFT_dots.png", height = 400,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
@@ -714,14 +714,14 @@ p.spanCenterImage("./figures/QFT_dots.png", height = 400,
 p.newSlide()
 p.title("Our recent experiment")
 
-p.spanCenterImage("./figures/nick_prl_1.png", height = 180)
+p.spanCenterImage("./Figures/nick_prl_1.png", height = 180)
 
 p.makeGrid(4,3)
 
 p.gridText(1,0,r"""
 Use Rydberg blockade to store one photon
 """)
-p.gridImage(1,1,"./figures/g2_flash.png", height = 240)
+p.gridImage(1,1,"./Figures/g2_flash.png", height = 240)
 
 ########################################
 #############  New slide  ##############
@@ -731,13 +731,13 @@ p.newSlide()
 p.title("Our recent experiment")
 
 
-p.spanCenterImage("./figures/nick_prl_1.png", height = 180)
+p.spanCenterImage("./Figures/nick_prl_1.png", height = 180)
 
 p.makeGrid(4,3)
 
-p.gridImage(1,0,"./figures/nick_prl_2.png", height = 240)
+p.gridImage(1,0,"./Figures/nick_prl_2.png", height = 240)
 
-p.gridImage(1,1,"./figures/nick_prl_3.png", height = 240)
+p.gridImage(1,1,"./Figures/nick_prl_3.png", height = 240)
 
 
 ########################################
@@ -760,7 +760,7 @@ p.leftText(r"""
 """)
 
 
-p.rightImage("./figures/QFT_dots.png", height = 400,
+p.rightImage("./Figures/QFT_dots.png", height = 400,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
@@ -772,7 +772,7 @@ p.rightImage("./figures/QFT_dots.png", height = 400,
 p.newSlide()
 p.title("Acknowledgements: Nikola Šibalić")
 
-p.spanCenterIFrame("./figures/Wigner_interactive.html", height=600)
+p.spanCenterIFrame("./Figures/Wigner_interactive.html", height=600)
 
 
 p.save("./Quantum_Semiotics.html")
@@ -797,7 +797,7 @@ p.gridText(0,0,r"""
 
 Wave-particle duality
 """)
-p.gridImage(0,1,"./figures/deBroglie.jpg", height = 100,
+p.gridImage(0,1,"./Figures/deBroglie.jpg", height = 100,
             textBelow=" ...we are to understand descriptions which are certainly **complementary** but at the same time, taken strictly incompatible", fontSize = 0.5)
 
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset=utf-8>
+	<title>Caroline presentation</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./caroline/images/caroline.ico">
+	<link rel="apple-touch-icon" href="./caroline/images/caroline_192.png">
+	<meta name="description" content=". Presentation made with Caroline, open-source Python framework for engaging science talks.">
+	<meta name="keywords" content=", caroline" />
+	<meta name="theme-color" content="#F0F0F0" />
+	<!--<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet" async defer>-->
+	<link rel="stylesheet" type="text/css" href="./caroline/style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content="">
+	<meta property="og:title" content="Caroline presentation" />
+  <meta property="og:description" content="" />
+	<meta name="twitter:image" content="">
+	<meta name=”twitter:card” content="summary" />
+	<meta name=”twitter:site” content="" />
+	<meta name=”twitter:title” content="Caroline presentation" />
+	<meta name=”twitter:description” content="" />
+</head>
+
+<body>
+<div id="confirmd">
+	<div>
+		<h3>Please confirm</h3>
+		<h2 id="confirmmessage"></h2>
+		<input type="button" id="bno" value="Cancel"><br/>
+		<input type="button" id="byes" value="Yes, clear roundtable">
+	</div>
+</div>
+
+<div id="slidespace">
+</div>
+<div id="cursor" class="cursor">
+  <div class="cursor-icon">	<div class="cursor-name" id="cname0"></div></div>
+
+</div>
+
+<div id="controlspace">
+	<div class="control" title="Exit roundtable"></div>
+	<div class="control" title="Toggle full screen"></div>
+	<div class="control" title="Next slide"></div>
+	<div class="control" title="Previous slide"></div>
+	<div class="control" title="Use pointer"></div>
+	<div class="control" title="Use pen"></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="Reduce pen line thickness"></div>
+	<div class="control" title="Increase pen line thickness"></div>
+	 <div class="control" title="Add text or LaTeX"></div>
+	<div class="control" title="Roundtable"></div>
+	<div class="control" title="Share image, PDF, Jupyter notebook or source code"><input type="file" id="selectedimage"></div>
+	<div class="control" title="Save current view as image"></div>
+	<div class="control" title="Increase text size"></div>
+	<div class="control" title="Decrease text size"></div>
+	<div class="control" title="Remove last annotation"></div>
+	<div class="control" title="Clear surface"></div>
+	<div class="control" title="Add slide surface"></div>
+</div>
+<div id="cameraspace">
+	<div class="camera" title="Add camera in the corner"></div>
+</div>
+<div id="roundtable_participants">
+</div>
+<div id="notify">
+	<span></span>
+</div>
+<div id="carolinelogo">
+</div>
+
+
+
+	<script>
+	MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [             // start/end delimiter pairs for display math
+				['$$', '$$'],
+				['\\[', '\\]']
+			],
+			processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+			packages: {'[+]': ['bbox']}
+		},
+		svg: {
+			fontCache: 'global'
+		},
+		loader: {load: ['[tex]/bbox']}
+	};
+	</script>
+	<script id="MathJax-script" src="./caroline/js/mathjax/tex-chtml.js"></script>
+	<script src="./caroline/js/socket.io.min.js"></script>
+	<script src="./caroline/js/html2canvas.min.js"></script>
+	<script src="./caroline/js/pdf.min.js"></script>
+	<script src='./caroline/js/jspdf.umd.min.js'></script>
+	<script>
+	 var pdfjsLib = window['pdfjs-dist/build/pdf'];
+	 pdfjsLib.GlobalWorkerOptions.workerSrc = './caroline/js/pdf.worker.min.js';
+	 var { jsPDF } = window["jspdf"];
+  </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<link id="codelightcss" rel="stylesheet" href="./caroline/style/atom-one-light.min.css" defer disabled="disabled">
+	<link id="codedarkcss" rel="stylesheet" href="./caroline/style/atom-one-dark.min.css" defer>
+	<script src="./caroline/js/highlight.min.js" defer></script>
+	<script src="./caroline/js/markdown-it.min.js" defer></script>
+	<script src="./caroline/js/markdown-it-mathjax.js" defer></script>
+	<script src='./caroline/js/nbv.js' defer></script>
+	<script src="./caroline/js/roundtable_app.js"></script>
+
+  <script>
+		var roundTable = false;
+		var username = "Lecturer";
+		var room = null;  // roundtable room
+	 	var data = {"slides": [{"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC.5: Ph 30, 14.00 Monday Jan 24, 2022\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e QIC.4 Summary \u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 2 / 3; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003eRotation matrices\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC4_rotation.png\u0027 alt=\u0027image ./QIC_Figures/QIC4_rotation.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\\begin{eqnarray} {\\sf R}_y^\\Theta \u0026amp; = \u0026amp; \n\\left( \n\\begin{array}{cc} \n\\cos \\Theta/2  \u0026amp; -\\sin \\Theta/2\\\\\n\\sin \\Theta/2 \u0026amp; \\cos \\Theta/2\n\\end{array} \n\\right)\u003cbr /\u003e\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 3 / 4; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eEM field + qubit\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eRabi solution\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 3 / 4; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC4_EMfield+qubit.png\u0027 alt=\u0027image ./QIC_Figures/QIC4_EMfield+qubit.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003cp\u003e\\begin{eqnarray}\n\\Omega = \\frac{\\langle 0 \\vert -\\boldsymbol{d}\\cdot\\boldsymbol{\\cal E}_0\\vert 1\\rangle}{\\hbar}\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 3 / 4; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\\begin{eqnarray}\\Delta = 0 \\end{eqnarray} \u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} {\\sf R}(\\Omega t, \\phi_{\\rm L}) \u0026amp; = \u0026amp; \n\\left( \n\\begin{array}{cc} \n\\cos\\textstyle{\\Omega t\\over 2} \u0026amp; -{\\rm i}{\\rm e}^{-{\\rm i}\\phi_{\\rm L}}\\sin\\textstyle{\\Omega t\\over 2}\\\\\n-{\\rm i}{\\rm e}^{{\\rm i}\\phi_{\\rm L}}\\sin\\textstyle{\\Omega t\\over 2} \u0026amp; \\cos\\textstyle{\\Omega t\\over 2}\n\\end{array} \n\\right)\u003cbr /\u003e\n\\end{eqnarray} \u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eQIC.5: Outline\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003eSingle-qubit gates (DVC2)\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eRabi oscillations\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e$\\pi/2$, $\\pi$, $2\\pi$ pulses.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_pi_over_2.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_pi_over_2.png\u0027 class=\u0027simage\u0027 style=\u0027height:150px;max-height:150px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 2 / 3; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003eHadamard gate\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 2 / 3; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/BlochDM_Hxz.png\u0027 alt=\u0027image ./QIC_Figures/BlochDM_Hxz.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eRabi solution $\\rightarrow {\\sf R}_y$ rotation\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\Delta = 0\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e Rabi solution \u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} {\\sf R}(\\Omega t, \\phi_{\\rm L}) \u0026amp; = \u0026amp; \n\\left( \n\\begin{array}{cc} \n\\cos\\textstyle{\\Omega t\\over 2} \u0026amp; -{\\rm i}{\\rm e}^{-{\\rm i}\\phi_{\\rm L}}\\sin\\textstyle{\\Omega t\\over 2}\\\\\n-{\\rm i}{\\rm e}^{{\\rm i}\\phi_{\\rm L}}\\sin\\textstyle{\\Omega t\\over 2} \u0026amp; \\cos\\textstyle{\\Omega t\\over 2}\n\\end{array} \n\\right)\u003cbr /\u003e\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e Set field phase \u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} \n\\phi_{\\rm L} = \\pi/2\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e Rotation angle \u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} \n\\Theta = \\Omega t\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003eRabi solution $\\rightarrow {\\sf R}_y$ rotation\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} {\\sf R}_y^\\Theta \u0026amp; = \u0026amp; \n\\left( \n\\begin{array}{cc} \n\\cos \\Theta/2  \u0026amp; -\\sin \\Theta/2\\\\\n\\sin \\Theta/2 \u0026amp; \\cos \\Theta/2\n\\end{array} \n\\right)\u003cbr /\u003e\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./QIC_Figures/BlochDM_Ry.html\u0027 title=\u0027iframe ./QIC_Figures/BlochDM_Ry.html\u0027 class=\u0027sframe\u0027 style=\u0027height:800px;max-height:800px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eRabi oscillations $\\rightarrow$ single-qubit gates\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e$\\pi/2$, $\\pi$, $2\\pi$ pulses\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_rabi_oscillation.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_rabi_oscillation.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003e$\\pi/2$ pulses\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_pi_over_2.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_pi_over_2.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003e$\\pi/2$ pulses\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_pi.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_pi.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003e$\\pi/2$ pulses\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_2pi.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_2pi.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eHadamard gate (${\\sf H}$)\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eWhat is it?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eWhy is it important?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eHow to realise ${\\sf H}$ using EM field?\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_Hadamard.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_Hadamard.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003e${\\sf R}_{xz}$ rotation\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003eHadamard $\\vert 0\\rangle \\rightarrow \\vert +\\rangle \\rightarrow \\vert 0\\rangle$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./QIC_Figures/BlochDM_Hxz.html\u0027 title=\u0027iframe ./QIC_Figures/BlochDM_Hxz.html\u0027 class=\u0027sframe\u0027 style=\u0027height:800px;max-height:800px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003e${\\sf R}_{yz}$ rotation\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003eChange field phase to $\\phi_{\\rm L}$\u003c/p\u003e\n\u003cp\u003eNot a Hadamard \u003c/p\u003e\n\u003cp\u003e$\\vert 0\\rangle \\rightarrow \\vert +{\\rm i}\\rangle \\rightarrow \\vert 0\\rangle$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./QIC_Figures/BlochDM_Hyz.html\u0027 title=\u0027iframe ./QIC_Figures/BlochDM_Hyz.html\u0027 class=\u0027sframe\u0027 style=\u0027height:800px;max-height:800px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eRabi oscillations: real qubits \u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eSuperconductors\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_superconducting_Rabi_oscillation_0.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_superconducting_Rabi_oscillation_0.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003cp\u003e\u003ca href=\"https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.107.240501\"\u003ehttps://journals.aps.org/prl/abstract/10.1103/PhysRevLett.107.240501\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_superconducting_Rabi_oscillation_1.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_superconducting_Rabi_oscillation_1.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eAtoms\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_Sr_Rabi_oscillation_0.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_Sr_Rabi_oscillation_0.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_Sr_Rabi_oscillation_1.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_Sr_Rabi_oscillation_1.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC.5 Summary\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e QIC.5 Notes \u003c/strong\u003e \u003c/p\u003e\n\u003cp\u003eSummary \u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_Summary.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_Summary.png\u0027 class=\u0027simage\u0027 style=\u0027height:400px;max-height:400px;\u0027\u003e\u003c/div\u003e", "style": ""}]};
+		var logoURL = "././presentation_files/Durham_University_Logo.png";
+		var leftHanded = true;
+		var drawingHelp = "lines";//"lines" or "dots";
+	  var drawingHelpIntensity = 0.04;
+	  var roundTableCallBack = null;
+		var roundTableServer = "https://roundtable.researchx3d.com";
+		var roundTableAuth = "osagASfew8t31qNqfHQ3Gq";
+		var roundTableExit = null;
+		var presentationServer = "https://etotheipiequals.github.io/QIC_Caroline/QIC_5_audience.html";
+		var presenter = true;
+	 	window.onload = initApp();
+ 	</script>
+
+</body>
