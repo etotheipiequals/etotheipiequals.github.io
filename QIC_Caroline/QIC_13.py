@@ -179,11 +179,12 @@ Summary
 
 p.rightText(r"""
 
-* Be able to explain why Rb, Cs and Sr make good choices for quantum computing.
+* Derive an expression for the trapping potential in 3D using gaussian beam optics.
 
-* Be able to explain what states are chosen for the computational basis and why.
+* Derive expressions for the spatial extent of atomic wave packet assuming it can be cooled to the motional ground state.
+ 
+* Estimate the population in the excited state and the rate of spontaneous scattering for particular trap parameters. 
 
-* Have an overview of other energy levels that are important in the initialisation (DVC1) and gate operation (DVC2) for a Rydberg atom quantum computer.
 
 """, fontSize = 1.0)
 

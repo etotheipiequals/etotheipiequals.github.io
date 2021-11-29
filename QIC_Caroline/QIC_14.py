@@ -245,7 +245,7 @@ p.rightText(r"""
 * Understanding the significant of $\Gamma$ in the context of stopping and cooling atoms.
 * Be able to calculate the stopping distance.
 *  Explain the principle of sideband cooling. 
-* Given input parameter such as laser wavelengths, powers and beam sizes, be able to estimate whether the condition for sideband cooling is satified. 
+* Given input parameters such as laser wavelengths, powers and beam sizes, be able to estimate whether the condition for sideband cooling is satified. 
 
 """, fontSize = 1.0)
 

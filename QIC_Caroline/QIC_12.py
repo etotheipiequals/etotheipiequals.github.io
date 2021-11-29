@@ -210,7 +210,7 @@ p.gridImage(1,1,"./QIC_Figures/QIC1_Rydberg_array.png", height = 200, textBelow=
 p.newSlide()
 p.title("QIC.12 Summary")
 p.leftText(r"""
-** QIC.11 Notes ** 
+** QIC.12 Notes ** 
 
 Summary 
 
@@ -218,11 +218,9 @@ Summary
 
 p.rightText(r"""
 
-* Be able to explain why Rb, Cs and Sr make good choices for quantum computing.
+* Explain the two types of light force.
 
-* Be able to explain what states are chosen for the computational basis and why.
-
-* Have an overview of other energy levels that are important in the initialisation (DVC1) and gate operation (DVC2) for a Rydberg atom quantum computer.
+* Understand how to derive expressions for the light-shift from either the light force or the eigenvalues of the interaction Hamiltonian. 
 
 """, fontSize = 1.0)
 

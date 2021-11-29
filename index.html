@@ -68,6 +68,7 @@
     function openURL(url){
       document.getElementById("presentation").setAttribute("src", url);
     }
+    function followURL(url){document.location = url;}
   </script>
 </head>
 <body>
@@ -82,7 +83,7 @@
         <span onclick="openURL('https://etotheipiequals.github.io/Optics/index.html')">Optics f2f</span>      
         <span onclick="openURL('https://arc-alkali-rydberg-calculator.readthedocs.io/en/latest/Rydberg_atoms_a_primer_notebook.html')">Rydberg</span>
       <h2>Quantum</h2>
-        <span onclick="openURL('https://etotheipiequals.github.io/QIC_Caroline/index.html')">QIC</span>
+        <span onclick="followURL('https://etotheipiequals.github.io/QIC_Caroline/index.html')">QIC</span>
         <span onclick="openURL('./QIC_Caroline/Quantum_Semiotics_audience.html')">Semiotics</span>
       <h2>Climate</h2>
         <span onclick="openURL('https://etotheipiequals.github.io/Climate/Keeling_curve.html')">Keeling curve</span>

@@ -69,6 +69,7 @@
     function openURL(url){
       document.getElementById("presentation").setAttribute("src", url);
     }
+    function followURL(url){document.location = url;}
   </script>
 </head>
 <body>
@@ -78,14 +79,15 @@
   </div>
   <div class="content">
     <div class="menuleft">
+        <span onclick="followURL('https://etotheipiequals.github.io/')">Return</span>
          <span onclick="openURL('./Circ_Aperture_interactive.html')">Circ Aperture</span>
     </div>
   <div class="content">
     <div class="menuleft">
-         <span onclick="openURL('./Circ_Aperture_interactive.html')">[Code]</span>
+         <span onclick="openURL('./Circ_Aperture_Colour.html')">[Code]</span>
     </div>
     <div class="mainspace">
-<iframe id="presentation" width="100%" height="100%" src="https://etotheipiequals.github.io/Optics/Circ_Aperture_Colour.html" allowfullscreen></iframe>
+<iframe id="presentation" width="100%" height="100%" src="https://etotheipiequals.github.io/Optics/Circ_Aperture_interactive.html" allowfullscreen></iframe>
     </div>
   </div>
 

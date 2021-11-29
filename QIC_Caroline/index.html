@@ -69,6 +69,7 @@
     function openURL(url){
       document.getElementById("presentation").setAttribute("src", url);
     }
+    function followURL(url){document.location = url;}
   </script>
 </head>
 <body>
@@ -78,6 +79,7 @@
   </div>
   <div class="content">
     <div class="menuleft">
+         <span onclick="followURL('https://etotheipiequals.github.io/')"> <<< </span>
          <span onclick="openURL('./QIC_1_audience.html')">1</span>
          <span onclick="openURL('./QIC_2_audience.html')">2</span>
          <span onclick="openURL('./QIC_3_audience.html')">3</span>

@@ -153,8 +153,8 @@ p.rightText(r"""
 
 * Understand the principle of stimulated Raman transition, how the effective Rabi frequency depends on the laser power and detuning.
 * Derive an expression for the probability of spontaneous emission during a single-qubit rotation.
-* Identify states that could be used for stimulated Raman transitions in for example Rb and Cs.
-* Work out configuration of laser beam polarizations and propagation directions  needed to drive the transition.
+* Identify states that could be used for stimulated Raman transitions in, for example, Rb and Cs.
+* Work out the configuration of laser beam polarizations and propagation directions needed to drive a particular transition.
 
 """, fontSize = 1.0)
 
