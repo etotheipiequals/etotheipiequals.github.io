@@ -13081,7 +13081,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -13099,7 +13099,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gbeam</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">angle</span><span class="p">):</span>
@@ -13118,7 +13118,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">SlitFigure</span><span class="p">(</span><span class="n">Position</span><span class="p">,</span><span class="n">Pol_Angle</span><span class="p">):</span>
@@ -13140,13 +13140,14 @@ div#notebook {
     <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x_pts</span><span class="p">,</span><span class="n">z_pts</span><span class="p">))</span>
 
     <span class="n">Amp</span> <span class="o">=</span> <span class="mf">0.8</span>        
-    <span class="n">Width</span><span class="o">=</span><span class="mi">10</span>
-    <span class="n">Slit1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">Width</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Width</span><span class="p">))</span> 
-    <span class="n">R</span><span class="o">+=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">Slit1</span>
-    <span class="n">G</span><span class="o">+=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">Slit1</span>
-    <span class="n">B</span><span class="o">+=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">Slit1</span>
+    <span class="n">Width</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">Slit1</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="p">(</span><span class="o">-</span><span class="n">Width</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">X</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta</span><span class="p">)</span><span class="o">*</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="p">(</span><span class="n">Width</span><span class="p">))</span> 
+    <span class="n">R</span><span class="o">+=</span><span class="mf">0.15</span><span class="o">*</span><span class="n">Slit1</span>
+    <span class="n">G</span><span class="o">+=</span><span class="mf">0.15</span><span class="o">*</span><span class="n">Slit1</span>
+    <span class="n">B</span><span class="o">+=</span><span class="mf">0.15</span><span class="o">*</span><span class="n">Slit1</span>
 
-    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">36</span><span class="p">)</span>
+    <span class="n">n_times</span> <span class="o">=</span> <span class="mi">36</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="n">n_times</span><span class="p">)</span>
 
     <span class="n">Theta0</span> <span class="o">=</span> <span class="o">-</span> <span class="n">Theta</span>
     <span class="n">Exx</span> <span class="o">=</span> <span class="n">Amp</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">time</span><span class="p">)</span>
@@ -13154,7 +13155,8 @@ div#notebook {
     <span class="n">Exx_phi</span> <span class="o">=</span> <span class="n">Exx</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">Eyy</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta0</span><span class="p">)</span>
     <span class="n">Eyy_phi</span> <span class="o">=</span> <span class="n">Exx</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">Theta0</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta0</span><span class="p">)</span> <span class="o">+</span> <span class="n">Eyy</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">Theta0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
 
-    <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Exx</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span><span class="n">Eyy</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markeredgecolor</span> <span class="o">=</span> <span class="n">cDUb</span><span class="p">,</span> <span class="n">markerfacecolor</span> <span class="o">=</span> <span class="n">cDUb</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n_times</span><span class="p">):</span>
+        <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Exx</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span><span class="n">Eyy</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markeredgecolor</span> <span class="o">=</span> <span class="n">cDUb</span><span class="p">,</span> <span class="n">markerfacecolor</span> <span class="o">=</span> <span class="n">cDUb</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">time</span><span class="p">[</span><span class="n">ii</span><span class="p">]),</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
     <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Exx_phi</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span><span class="n">Eyy_phi</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="s2">&quot;o&quot;</span><span class="p">,</span> <span class="n">markeredgecolor</span> <span class="o">=</span> <span class="n">cDUr</span><span class="p">,</span> <span class="n">markerfacecolor</span>  <span class="o">=</span> <span class="n">cDUr</span><span class="p">,</span> <span class="n">markersize</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 
     <span class="n">R</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">clip</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">)</span>
@@ -13195,14 +13197,14 @@ div#notebook {
     <span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">x_pts</span><span class="p">,</span><span class="n">z_pts</span><span class="p">))</span>
 
     <span class="n">G</span> <span class="o">+=</span><span class="n">Intensity</span>
+    
     <span class="n">RGB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dstack</span><span class="p">((</span><span class="n">R</span><span class="p">,</span> <span class="n">G</span><span class="p">,</span> <span class="n">B</span><span class="p">))</span>
-
 
     <span class="n">ax2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">RGB</span><span class="p">)</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">set_axis_off</span><span class="p">()</span> 
 
     <span class="n">pos</span> <span class="o">=</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">Position</span> <span class="c1"># the scaling to position depends on angle</span>
-    <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pos</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">40</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cDUggg</span><span class="p">)</span>
+    <span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">pos</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="mi">0</span><span class="o">*</span><span class="n">xmax</span><span class="o">+</span><span class="n">xmax</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">marker</span> <span class="o">=</span> <span class="s2">&quot;s&quot;</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="n">cDUggg</span><span class="p">)</span>
     
     <span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$ I(x,z)$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">cDUggg</span><span class="p">)</span>
     <span class="n">ax2</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">106</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$ z=0$&#39;</span><span class="p">,</span><span class="n">fontsize</span> <span class="o">=</span> <span class="mi">36</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">cDUggg</span><span class="p">)</span>
@@ -13232,7 +13234,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[6]:</div>
+    <div class="prompt output_prompt">Out[15]:</div>
 
 
 
