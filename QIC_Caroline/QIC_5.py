@@ -290,9 +290,9 @@ Superconductors
 """, fontSize = 0.5)
 
 p.gridImage(0,2,"./QIC_Figures/QIC5_superconducting_Rabi_oscillation_0.png", height = 100,
-            textBelow=r"""https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.107.240501""", fontSize = 0.5)
-p.gridImage(0,3,"./QIC_Figures/QIC5_superconducting_Rabi_oscillation_1.png", height = 100,
-            textBelow="", fontSize = 0.5)
+            textBelow="", fontSize = 0.25)
+p.gridImage(0,3,"./QIC_Figures/QIC5_superconducting_Rabi_oscillation_1.png", height = 140,
+            textBelow=r"""https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.107.240501""", fontSize = 0.25)
 
 p.gridText(1,0,r"""
 
@@ -303,6 +303,16 @@ p.gridImage(1,2,"./QIC_Figures/QIC5_Sr_Rabi_oscillation_0.png", height = 100,
             textBelow="", fontSize = 0.5)
 p.gridImage(1,3,"./QIC_Figures/QIC5_Sr_Rabi_oscillation_1.png", height = 100,
             textBelow="", fontSize = 0.5)
+
+p.gridText(2,0,r"""
+
+Silicon
+""", fontSize = 0.5)
+
+
+p.gridImage(2,3,"./QIC_Figures/QIC1_Si_2_qubit_0.png", height = 100,
+            textBelow="Mills et al, arXiv:2111.1937", fontSize = 0.5)
+
 
 ########################################
 #############  New slide  ############## What I do? Teaching 
