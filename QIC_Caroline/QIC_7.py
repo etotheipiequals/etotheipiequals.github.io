@@ -48,7 +48,6 @@ p.gridText(2,1,r"""
 
 p.gridImage(2,2,"./QIC_Figures/BlochDM_T2.png", height = 150)
 
-
 ########################################
 p.newSlide()
 p.title("**QIC.7: Quantum interference**")
@@ -67,12 +66,9 @@ p.gridText(1,0,r"""
 
 * What is it?
 
-
 """, fontSize = 0.5)
 
 p.gridImage(1,1,"./QIC_Figures/QIC7_Ramsey_0.png", height = 200)
-
-
 
 p.gridImage(1,2,"./Figures/Ramsey_static.png", height = 200)
 
@@ -92,7 +88,6 @@ p.makeGrid(4,4)
 
 p.gridImage(0,3,"./QIC_Figures/QIC7_circuit_H_measure.png", height = 150)
 
-
 p.gridImage(2,3,"./QIC_Figures/QIC7_rho_H_measure.png", height = 150)
 
 ########################################
@@ -103,9 +98,16 @@ p.makeGrid(4,4)
 
 p.gridImage(0,3,"./QIC_Figures/QIC7_circuit_H_measure.png", height = 150)
 
-
 p.gridImage(2,3,"./QIC_Figures/QIC7_rho_H_measure.png", height = 150)
 
+########################################
+p.newSlide()
+p.title(r"""**Ramsey interferometer**""")
+
+p.makeGrid(4,4)
+
+p.gridImage(0,3,"./QIC_Figures/QIC7_Ramsey_2.png", height = 150)
+p.gridImage(1,3,"./QIC_Figures/QIC7_Ramsey_1.png", height = 150)
 
 ########################################
 p.newSlide()
@@ -117,15 +119,18 @@ p.gridImage(0,1,"./QIC_Figures/QIC7_Ramsey_circuit_1.png", height = 150)
 
 p.gridImage(1,1,"./QIC_Figures/QIC7_Ramsey_time.png", height = 150)
 
-
 p.gridImage(2,1,"./QIC_Figures/QIC7_Ramsey_5.png", height = 150)
 
 p.gridImage(2,2,"./QIC_Figures/QIC7_Ramsey_6.png", height = 150)
 
-
 p.gridImage(2,0,"./QIC_Figures/QIC7_Ramsey_4.png", height = 150)
 
+########################################
+p.newSlide()
+p.title(r"""**Ramsey interferometer**""")
 
+
+p.spanCenterImage("./QIC_Figures/QIC7_Ramsey_clocks.png", height=400)
 
 ########################################
 p.newSlide()
@@ -133,10 +138,18 @@ p.title(r"""**Ramsey interferometer**""")
 
 p.makeGrid(4,4)
 
-p.gridImage(0,3,"./QIC_Figures/QIC7_Ramsey_2.png", height = 150)
-p.gridImage(1,3,"./QIC_Figures/QIC7_Ramsey_1.png", height = 150)
+p.gridImage(0,3,"./QIC_Figures/QIC7_Ramsey_1.png", height = 150)
 
 
+########################################
+p.newSlide()
+p.title(r"""**Ramsey interferometer**""")
+
+p.leftText(r"""
+
+""", fontSize = 0.5)
+
+p.rightIFrame("./QIC_Figures/Ramsey_2_interactive.html", height=800)
 
 ########################################
 p.newSlide()
@@ -148,8 +161,6 @@ p.leftText(r"""
 
 p.rightIFrame("./QIC_Figures/Ramsey_interactive.html", height=800)
 
-
-
 ########################################
 p.newSlide()
 p.title(r"""**Ramsey interferometer: decoherence**""")
@@ -159,12 +170,7 @@ p.makeGrid(4,4)
 p.gridImage(0,3,"./QIC_Figures/QIC7_Ramsey_2.png", height = 150)
 p.gridImage(1,3,"./QIC_Figures/QIC7_Ramsey_1.png", height = 150)
 
-
-
-
 p.gridImage(2,3,"./QIC_Figures/QIC7_Ramsey_3.png", height = 150)
-
-
 
 ########################################
 p.newSlide()
@@ -174,15 +180,6 @@ p.makeGrid(2,2)
 
 p.gridImage(0,0,"./QIC_Figures/QIC7_Sr_tweezer_0.png", height = 300)
 p.gridImage(0,1,"./QIC_Figures/QIC7_Sr_tweezer_1.png", height = 300)
-
-
-########################################
-p.newSlide()
-p.title(r"""**Ramsey interferometer**""")
-
-
-p.spanCenterImage("./QIC_Figures/QIC7_Ramsey_clocks.png", height=400)
-
 
 ########################################
 p.newSlide()

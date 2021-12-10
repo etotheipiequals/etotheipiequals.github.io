@@ -60,24 +60,38 @@ EM field + qubit
 p.gridImage(2,2,"./QIC_Figures/QIC4_EMfield+qubit.png", height = 100, textBelow = r""" 
 \begin{eqnarray}
 \Omega = \frac{\langle 0 \vert -\boldsymbol{d}\cdot\boldsymbol{\cal E}_0\vert 1\rangle}{\hbar}
+= \frac{d{\cal E}_0}{\hbar}
 \end{eqnarray}
  """, fontSize = 0.5)
 
 p.gridText(2,3,r"""
 
-\begin{eqnarray}\Delta = 0 \end{eqnarray} 
-
-\begin{eqnarray} {\sf R}(\Omega t, \phi_{\rm L}) & = & 
-\left( 
+\begin{eqnarray} {\cal H}_{\rm int} & = & 
+\frac{\hbar}{2}\left( 
 \begin{array}{cc} 
-\cos\textstyle{\Omega t\over 2} & -{\rm i}{\rm e}^{-{\rm i}\phi_{\rm L}}\sin\textstyle{\Omega t\over 2}\\\
--{\rm i}{\rm e}^{{\rm i}\phi_{\rm L}}\sin\textstyle{\Omega t\over 2} & \cos\textstyle{\Omega t\over 2}
-\end{array} 
+\Delta & \Omega {\rm e}^{ - {\rm i}\phi_L }  \\\
+\Omega {\rm e}^{  {\rm i}\phi_L } & -\Delta
+\end{array}
 \right)  
 \end{eqnarray} 
 
 
 """, fontSize = 0.5)
+
+#\Delta & \Omega  {\rm e}^{-{\rm i}\phi_{\rm L}} \\\
+#\Omega {\rm e}^{{\rm i}\phi_{\rm L}} & \Delta
+
+
+#\begin{eqnarray}\Delta = 0 \end{eqnarray} 
+
+#\begin{eqnarray} {\sf R}(\Omega t, \phi_{\rm L}) & = & 
+#\left( 
+#\begin{array}{cc} 
+#\cos\textstyle{\Omega t\over 2} & -{\rm i}{\rm e}^{-{\rm i}\phi_{\rm L}}\sin\textstyle{\Omega t\over 2}\\\
+#-{\rm i}{\rm e}^{{\rm i}\phi_{\rm L}}\sin\textstyle{\Omega t\over 2} & \cos\textstyle{\Omega t\over 2}
+#\end{array} 
+#\right)  
+#\end{eqnarray} 
 
 ########################################
 ############# TITLE slide ##############
@@ -107,6 +121,59 @@ p.gridText(1,0,r"""
 """, fontSize = 1.0)
 
 p.gridImage(1,2,"./QIC_Figures/BlochDM_Hxz.png", height = 200)
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title(r"""**Qubit control using EM fields: Rabi solution **
+""")
+
+p.makeGrid(4,4)
+p.gridText(0,0,r"""
+
+\begin{eqnarray} {\cal H}_{\rm int} & = & 
+\frac{\hbar}{2}\left( 
+\begin{array}{cc} 
+\Delta & \Omega {\rm e}^{ - {\rm i}\phi_L }  \\\
+\Omega {\rm e}^{  {\rm i}\phi_L } & -\Delta
+\end{array}
+\right)  
+\end{eqnarray} 
+
+See QIC.4 Appendix for more details.
+
+""", fontSize = 0.5)
+
+p.gridImage(0,3,"./QIC_Figures/QIC4_EMfield+qubit.png", height = 150,
+            textBelow="", fontSize = 0.5)
+            
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title(r"""**Qubit control using EM fields: ${\sf R}_z$ and ${\sf R}_y$ rotations **
+""")
+
+p.makeGrid(4,4)
+p.gridText(0,2,r"""
+
+\begin{eqnarray} {\cal H}_{\rm int} & = & 
+\frac{\hbar}{2}\left( 
+\begin{array}{cc} 
+\Delta & \Omega {\rm e}^{ - {\rm i}\phi_L }  \\\
+\Omega {\rm e}^{  {\rm i}\phi_L } & -\Delta
+\end{array}
+\right)  
+\end{eqnarray} 
+
+""", fontSize = 0.5)
+
+p.gridImage(0,3,"./QIC_Figures/QIC4_EMfield+qubit.png", height = 150,
+            textBelow="", fontSize = 0.5)
+
 
 ########################################
 #############  New slide  ##############
@@ -182,14 +249,14 @@ p.gridImage(0,3,"./QIC_Figures/QIC5_rabi_oscillation.png", height = 100, textBel
 
 p.newSlide()
 
-p.title("**$\pi/2$ pulses**")
+p.title("**$\pi/2$ pulse**")
 
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 p.gridText(0,0,r"""
 
 """, fontSize = 1.0)
 
-p.gridImage(0,3,"./QIC_Figures/QIC5_pi_over_2.png", height = 100, textBelow = r""" """, fontSize = 0.5)
+p.gridImage(0,1,"./QIC_Figures/QIC5_pi_over_2.png", height = 240, textBelow = r""" """, fontSize = 0.5)
 
 ########################################
 ############# NEW slide ##############
@@ -197,14 +264,14 @@ p.gridImage(0,3,"./QIC_Figures/QIC5_pi_over_2.png", height = 100, textBelow = r"
 
 p.newSlide()
 
-p.title("**$\pi/2$ pulses**")
+p.title("**$\pi$ pulse**")
 
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 p.gridText(0,0,r"""
 
 """, fontSize = 1.0)
 
-p.gridImage(0,3,"./QIC_Figures/QIC5_pi.png", height = 100, textBelow = r""" """, fontSize = 0.5)
+p.gridImage(0,1,"./QIC_Figures/QIC5_pi.png", height = 240, textBelow = r""" """, fontSize = 0.5)
 
 ########################################
 ############# NEW slide ##############
@@ -212,14 +279,14 @@ p.gridImage(0,3,"./QIC_Figures/QIC5_pi.png", height = 100, textBelow = r""" """,
 
 p.newSlide()
 
-p.title("**$\pi/2$ pulses**")
+p.title("**$2\pi$ pulse**")
 
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 p.gridText(0,0,r"""
 
 """, fontSize = 1.0)
 
-p.gridImage(0,3,"./QIC_Figures/QIC5_2pi.png", height = 100, textBelow = r""" """, fontSize = 0.5)
+p.gridImage(0,1,"./QIC_Figures/QIC5_2pi.png", height = 240, textBelow = r""" """, fontSize = 0.5)
 
 ########################################
 #############  New slide  ##############

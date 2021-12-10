@@ -50,11 +50,11 @@ p.gridText(1,1,r"""
 
 p.gridText(1,2,r"""
 
-* LC superconducting circuit
-* Ion
-* Atom
-* Photon
-* P$^+$ in Si
+* Superconductors: LC circuit
+* Ions
+* Atoms
+* Photons
+* Silicon: electron spins
 
 """, fontSize = 0.5)
 
@@ -142,7 +142,7 @@ p.gridImage(1,1,"./QIC_Figures/QIC2_DiVincenzo_1.png", height = 100)
 ########################################
 
 p.newSlide()
-p.title("DiVincenzo Criteria (DVC")
+p.title("DiVincenzo Criteria (DVC)")
 
 p.makeGrid(4,4)
 p.gridText(0,2,r"""
@@ -234,6 +234,16 @@ Summary
 
 
 """, fontSize = 1.0)
-p.rightImage("./QIC_Figures/QIC2_Summary.png", height = 400)
+p.rightText(r"""
+
+* List the 5 diVincenzo criteria.
+
+* Write the state vector in polar coordinates.
+
+* Sketch the Bloch sphere.
+
+* Identify different positions on the Bloch sphere with particular state vectors.
+
+""",  fontSize = 1.0)
 
 p.save("./QIC_2.html")

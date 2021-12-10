@@ -97,9 +97,9 @@ p.gridImage(3,3,"./QIC_Figures/QIC12_light_forces_1.png", height = 100, textBelo
 p.newSlide()
 p.title("Spontaneous force ")
 
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 
-p.gridImage(3,3,"./QIC_Figures/QIC12_spont_force.png", height = 100, textBelow="", fontSize = 0.5)
+p.gridImage(1,1,"./QIC_Figures/QIC12_spont_force.png", height = 200, textBelow="", fontSize = 0.5)
 
 
 
@@ -107,9 +107,9 @@ p.gridImage(3,3,"./QIC_Figures/QIC12_spont_force.png", height = 100, textBelow="
 p.newSlide()
 p.title("Optical dipole potential ")
 
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 
-p.gridImage(3,3,"./QIC_Figures/QIC12_dipole_in_out_of_phase.png", height = 100, textBelow="", fontSize = 0.5)
+p.gridImage(1,1,"./QIC_Figures/QIC12_dipole_in_out_of_phase.png", height = 200, textBelow="", fontSize = 0.5)
 
 
 ########################################
@@ -124,87 +124,6 @@ p.gridImage(0,3,"./QIC_Figures/QIC12_dressed_states_2.png", height = 100, textBe
 
 
 
-
-
-
-########################################
-p.newSlide()
-p.title("Part II")
-
-p.spanCenterText(r"""
-
-## Rydberg atom quantum computer 
-""")
-
-p.leftText(r"""
-**DiVincenzo Criteria**
-
-* Qubits: Atoms (Rb, Cs, Sr) Initialisation [QIC.11-15]
-* Gates (lasers): Single-qubit gates [QIC.16] and Two-qubit gates [QIC.17-18]
-* Read-out (lasers) [QIC.16]
-* Low decoherence (select particular states) [QIC.11 and 16]
-* Scalability (optical tweezer arrays) [QIC.12-15]
-
-""", fontSize = 0.5)
-
-########################################
-p.newSlide()
-p.title("Atoms")
-
-p.makeGrid(4,4)
-
-p.gridImage(0,3,"./QIC_Figures/QIC11_periodic_table.png", height = 100, textBelow="", fontSize = 0.5)
-
-########################################
-p.newSlide()
-p.title("Alkali Atoms: States ")
-
-p.makeGrid(4,4)
-
-p.gridImage(0,3,"./QIC_Figures/QIC11_atom_parts.png", height = 100, textBelow="", fontSize = 0.5)
-
-########################################
-p.newSlide()
-p.title("Cs States ")
-
-p.makeGrid(4,4)
-
-p.gridImage(0,3,"./QIC_Figures/QIC11_Cs_energy_levels_2.png", height = 100, textBelow="", fontSize = 0.5)
-
-########################################
-p.newSlide()
-p.title("Sr States ")
-
-p.makeGrid(4,4)
-
-p.gridImage(0,3,"./QIC_Figures/QIC11_Sr_energy_levels_1.png", height = 100, textBelow="", fontSize = 0.5)
-
-
-
-
-########################################
-p.newSlide()
-p.title(r"""**Initialisation (DVC1)**""")
-
-
-
-p.makeGrid(2,2)
-
-p.gridText(0,0,r"""
- 
-* Prepare atom array in state $\vert 0\rangle$
- 
-* Use lasers [QIC.12-15]
-
-* For trapping: far-detuned laser with $\Delta \gg \Omega$.
-
-* To load traps, laser cooling, near-resonant laser $\Delta \sim \Omega \sim \Gamma$ 
-""", fontSize = 0.5)
-
-p.gridImage(0,1,"./QIC_Figures/QIC7_Sr_tweezer_0.png", height = 300)
-
-
-p.gridImage(1,1,"./QIC_Figures/QIC1_Rydberg_array.png", height = 200, textBelow="Barredo et al, Nature  **561**, 79 (2018)", fontSize = 0.5)
 
 ########################################
 p.newSlide()

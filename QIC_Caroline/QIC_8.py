@@ -85,7 +85,13 @@ $
  =  a_{00}\vert 00 \rangle + a_{01}\vert 01 \rangle + a_{10}\vert 10 \rangle + a_{11}\vert 11 \rangle$
 """, fontSize = 0.5)
 
-p.gridText(1,2,r"""
+
+
+p.newSlide()
+p.title("Two-qubit states")
+
+p.makeGrid(4,4)
+p.gridText(0,2,r"""
 
 ** Bell states ** 
 
@@ -98,25 +104,11 @@ $\vert\Psi^{\pm}\rangle
 """, fontSize = 0.5)
 
 
-p.gridImage(1,3,"./Figures/Bell.jpg", height = 200,
+p.gridImage(0,3,"./Figures/Bell.jpg", height = 200,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
 
-########################################
-#############  New slide  ##############
-########################################
-
-p.newSlide()
-p.title("Bell states are useful!")
-
-
-p.makeGrid(4,4)
-
-p.gridImage(0,3,"./QIC_Figures/QIC8_crypto_1.png", height = 200)
-p.gridImage(2,3,"./QIC_Figures/QIC8_crypto_2.png", height = 200)
-
-#p.rightImage("./Figures/Quantum_Crypt_PhysWorld.jpg", height = 400)
 
 ########################################
 #############  New slide  ##############
@@ -124,18 +116,42 @@ p.gridImage(2,3,"./QIC_Figures/QIC8_crypto_2.png", height = 200)
 
 p.newSlide()
 p.title("Two-qubit operators")
-p.leftText(r"""   
+
+p.makeGrid(4,4)
+p.gridText(0,2,r"""
 Apply an ${\sf R}_y$ rotation to both qubits.
+""", fontSize = 0.5)
+
+
+p.gridImage(0,3,"./Figures/Bloch_Ry.png", height = 200, 
+            textBelow=r"**Figure**:  Bloch sphere $\times 2$?", fontSize = 0.5)
+
+
+#p.spanCenterImage("./equations/Ry_otimes_Ry.png", height = 200)
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Bloch sphere?")
+p.leftText(r"""
+
+
+* Excellent to understand single-qubit gates
+
+* Decay and decoherene of single qubit
+
+* But does not work for more than one qubit.
+
+* Fortunately, the density matrix is extendable to any number of qubits.
+
+
 """)
-
-p.rightImage("./Figures/Bloch_Ry.png", height = 200, 
-            textBelow=r"**Figure**:  Bloch sphere $\times 2$?")
+p.rightImage("./Figures/BlochSphere_Bad.JPG", height = 300)
 
 
-p.spanCenterImage("./equations/Ry_otimes_Ry.png", height = 200,
-#            textAbove="**The density matrix**",
-#            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
-           )
 
 
 
@@ -169,6 +185,21 @@ p.spanCenterImage("./Figures/Bell_irrotational.JPG", height = 200,
 #            textAbove="**The density matrix**",
 #            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
            )
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Bell states are useful!")
+
+
+p.makeGrid(4,4)
+
+p.gridImage(0,3,"./QIC_Figures/QIC8_crypto_1.png", height = 200)
+p.gridImage(2,3,"./QIC_Figures/QIC8_crypto_2.png", height = 200)
+
+
 
 ########################################
 #############  New slide  ##############

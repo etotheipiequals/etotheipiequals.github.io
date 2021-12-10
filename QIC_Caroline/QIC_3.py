@@ -62,7 +62,7 @@ DVC 1: Qubits
 
 p.gridText(2,2,r"""
 
-\begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} \cos\textstyle{\theta\over 2}  \\\ {\rm e}^{{\rm i}\pi}\sin\textstyle{\theta\over 2} \end{array}\right)\end{eqnarray}
+\begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} \cos\textstyle{\theta\over 2}  \\\ {\rm e}^{{\rm i}\phi}\sin\textstyle{\theta\over 2} \end{array}\right)\end{eqnarray}
 
 """, fontSize = 0.5)
 
@@ -97,7 +97,7 @@ p.gridImage(1,1,"./QIC_Figures/QIC3_vonNeumann.png", height = 200)
 
 p.gridText(1,2,r"""
 
-_In mathematics you don't understand things you just get usd to them._
+_In mathematics you don't understand things you just get used to them._
 
 Quoted in G. Zukav _The Dancing Wu Li Masters_
 
@@ -108,7 +108,7 @@ Quoted in G. Zukav _The Dancing Wu Li Masters_
 ########################################
 
 p.newSlide()
-p.title("Pauli martrices: Why?")
+p.title("Pauli martrices: What?")
 
 p.makeGrid(3,3)
 p.gridText(0,0,r"""
@@ -124,7 +124,7 @@ p.gridImage(1,2,"./QIC_Figures/QIC3_gates.png", height = 200, textBelow = r"""ht
 ########################################
 
 p.newSlide()
-p.title("Pauli martrices: What?")
+p.title("Pauli martrices: Why?")
 
 p.makeGrid(3,3)
 p.gridText(0,0,r"""
@@ -164,7 +164,7 @@ p.newSlide()
 p.title("Density matrix: Why?")
 
 p.makeGrid(3,3)
-p.gridText(0,0,r"""
+p.gridText(0,2,r"""
 
 **Advantages:**
 
@@ -174,6 +174,22 @@ p.gridText(0,0,r"""
 
 """, fontSize = 0.5)
 
+
+
+
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Density matrix: Why?")
+
+p.makeGrid(3,3)
+
+
+
 p.gridText(1,0,r"""
 
 **Visualisation**
@@ -182,19 +198,16 @@ $\vert \rho_{ij}\vert \leq 1 $
 
 """, fontSize = 0.5)
 
-p.gridImage(1,1,"./Figures/Colour_Wheel.JPG", height = 100,
-            textBelow="**Colour wheel** Amplitude proportional to transparency. Phase given by colour.", fontSize = 0.5)
 
-p.gridImage(1,2,"./Figures/QFT_dots.png", height = 100, textBelow="**Quantum Fourier transform:** 5 qubits. https://en.wikipedia.org/wiki/Quantum_Fourier_transform", fontSize = 0.5)
+
+#p.gridImage(1,2,"./Figures/QFT_dots.png", height = 100, textBelow="**Quantum Fourier transform:** 5 qubits. https://en.wikipedia.org/wiki/Quantum_Fourier_transform", fontSize = 0.5)
 
 ########################################
 #############  New slide  ##############
 ########################################
 
 p.newSlide()
-p.title(r"""**Density matrix**
-
-**Pure states: $\rho=\vert\psi\rangle\langle\psi\vert$ **
+p.title(r"""**Density matrix: Pure state $\rho=\vert\psi\rangle\langle\psi\vert$ **
 """)
 
 p.makeGrid(4,4)
@@ -202,14 +215,8 @@ p.gridText(0,0,r"""
 
 """, fontSize = 1.0)
 
-p.gridText(2,2,r"""
 
-**Visualisation**
-
-""", fontSize = 1.0)
-
-p.gridImage(2,3,"./QIC_Figures/QIC3_BlochDM_H.png", height = 100,
-            textBelow="", fontSize = 0.5)
+#p.gridImage(2,3,"./QIC_Figures/QIC3_BlochDM_H.png", height = 100, textBelow="", fontSize = 0.5)
 
 #p.gridImage(0,2,"./Figures/QFT_circuit_diagram.png", height = 100)
 
@@ -218,9 +225,7 @@ p.gridImage(2,3,"./QIC_Figures/QIC3_BlochDM_H.png", height = 100,
 ########################################
 
 p.newSlide()
-p.title(r"""**Density matrix**
-
-**Pure states: $\rho=\vert\psi\rangle\langle\psi\vert$ **
+p.title(r"""**Density matrix: Pure state $\rho=\vert\psi\rangle\langle\psi\vert$ **
 """)
 
 ########################################
@@ -228,10 +233,43 @@ p.title(r"""**Density matrix**
 ########################################
 
 p.newSlide()
-p.title(r"""**Density matrix**
-
-**Pure states: $\rho=\vert\psi\rangle\langle\psi\vert$ **
+p.title(r"""**Qubit density matrix: Pure state $\rho=\vert\psi\rangle\langle\psi\vert$**
 """)
+
+p.leftText(r"""
+
+\begin{eqnarray} \rho & = & \frac{1}{2}
+\left( 
+\begin{array}{cc} 
+1 + w & u - {\rm i} v\\\
+u + {\rm i}v & 1 - w 
+\end{array} 
+\right)  
+\end{eqnarray} 
+
+\begin{eqnarray} u & = & \sin\theta \cos\phi\\\
+v & = & \sin\theta \sin\phi\\\
+w & = & \cos\theta 
+\end{eqnarray} 
+
+""")
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title(r"""**Density matrix: visualisation**""")
+
+
+p.leftImage("./Figures/Colour_Wheel.JPG", height = 200,
+	textAbove = r"""For density matrix elements, $\vert \rho_{ij}\vert \leq 1 $: Use phasor representation.""",
+	textBelow = "**Colour wheel** Amplitude proportional to transparency. Phase given by colour.", fontSize = 0.5)
+            
+ 
+p.rightImage("./QIC_Figures/BlochDM_theta_phi.png", height = 400, textBelow=r"Rows: Vary $\theta$. Columns: Vary $\phi$", fontSize = 0.5)
+
+            
 
 ########################################
 #############  New slide  ##############
@@ -259,6 +297,8 @@ w & = & \cos\theta
 """)
 
 p.rightIFrame("./QIC_Figures/BlochDM_6.html", height=800)
+
+
 
 ########################################
 #############  New slide  ##############
@@ -292,7 +332,7 @@ p.rightIFrame("./QIC_Figures/BlochDM_theta_phi.html", height=800)
 ########################################
 
 p.newSlide()
-p.title(r"""**Decoherence **
+p.title(r"""**Decoherence: Brief introduction **
 """)
 p.makeGrid(4,4)
 p.gridText(0,2,r"""

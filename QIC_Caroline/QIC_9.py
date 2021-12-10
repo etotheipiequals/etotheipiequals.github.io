@@ -171,7 +171,7 @@ Linear optics quantum computing (KLM), Knill et al. Nature **409**, 46 (2001).
 p.gridImage(0,2,"./QIC_Figures/QIC1_photons_1.png", height = 100)
 
 
-p.gridImage(1,1,"./QIC_Figures/QIC9_KLM_0.gif", height = 400)
+#p.gridImage(1,1,"./QIC_Figures/QIC9_KLM_0.gif", height = 400)
 
 
 
@@ -195,22 +195,22 @@ Knill et al. Nature **409**, 46 (2001).
 
 """, fontSize = 0.5)
 
-p.rightIFrame("./QIC_Figures/CNOT_interactive.html", height=600)
-#p.spanCenterIFrame("./Figures/Bell_Ry_dots.html", height=600)
+p.rightIFrame("./QIC_Figures/CNOT_interactive_v5.html", height=600)
+
+
 
 ########################################
 #############  New slide  ##############
 ########################################
 
 p.newSlide()
-p.title(r"Photonic CNOT: all possibilities")
+p.title(r"CNOT: Silicon and Rydberg atoms")
 
 
-p.spanCenterIFrame("./QIC_Figures/CNOT_interactive_v5.html", height=1200)
-
-
-
-
+p.leftImage("./QIC_Figures/QIC18_Si_CNOT_SWAP.png", height=500,
+textBelow =r"""Mills *et al*, arXiv:2111.1937  """, fontSize = 0.5)
+p.rightImage("./QIC_Figures/QIC18_levine_2.png", height=500,
+textBelow =r"""Levine *et al*, PRL, **123**, 170503 (2019) """, fontSize = 0.5)
 
 
 ########################################

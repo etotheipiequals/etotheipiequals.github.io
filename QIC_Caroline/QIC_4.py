@@ -26,6 +26,18 @@ p.leftText(r"""
 
 Pauli matrices
 
+\begin{eqnarray} 
+\langle \psi \vert \sigma_x\vert \psi \rangle & = & u
+\end{eqnarray} 
+
+\begin{eqnarray} 
+\langle \psi \vert \sigma_y\vert \psi \rangle & = & v
+\end{eqnarray}
+ 
+\begin{eqnarray} 
+\langle \psi \vert \sigma_z\vert \psi \rangle & = & w
+\end{eqnarray} 
+
 Density matrix
 
 \begin{eqnarray} \rho & = & \frac{1}{2}
@@ -37,7 +49,7 @@ u + {\rm i}v & 1 - w
 \right)  
 \end{eqnarray} 
 
-""", fontSize = 1.0)
+""", fontSize = 0.5)
 
 p.rightImage("./QIC_Figures/BlochDM_theta_phi.png", height = 400)
 
@@ -117,7 +129,7 @@ p.gridText(0,3,r"""
 
 **Worked example**: Derive a matrix for a $\pi/2$ rotation about the $x$ axis.
 
-What the direction of the Bloch vector after this rotation is applied to 
+What is the direction of the Bloch vector after this rotation is applied to 
 
 (i) $\vert 0\rangle$ and 
 
@@ -195,9 +207,9 @@ p.gridText(0,3,r"""
 
 **Worked example**: Derive a matrix for a $\pi/2$ rotation about the $z$ axis.
 
-What the direction of the Bloch vector after this rotation is applied to 
+What is the direction of the Bloch vector after this rotation is applied to 
 
-$\vert +\rangle = \textstyle{1\over \sqrt{2})(\vert 0\rangle + \vert 0\rangle)$? 
+$\vert +\rangle = \textstyle{1\over \sqrt{2}}(\vert 0\rangle + \vert 1\rangle)$? 
 
 """, fontSize = 0.5)
 

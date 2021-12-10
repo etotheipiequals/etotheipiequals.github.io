@@ -78,9 +78,12 @@ p.gridImage(0,3,"./QIC_Figures/QIC10_decoherence_circuit_1.png", height = 100)
 ########################################
 p.newSlide()
 p.title("**Decoherence due to interaction with the environment**")
-p.makeGrid(4,4)
-p.gridImage(0,3,"./QIC_Figures/QIC10_decoherence_circuit_2.png", height = 100)
 
+########################################
+p.newSlide()
+p.title("**Decoherence due to interaction with the environment**")
+p.makeGrid(4,4)
+p.gridImage(2,3,"./QIC_Figures/QIC10_decoherence_circuit_2.png", height = 100)
 
 
 
@@ -116,6 +119,15 @@ J Gleick, *Genius: the Life and Science of Richard Feynman* (1993)
 
 
 p.gridImage(1,1,"./QIC_Figures/QIC10_wheeler_1.jpg", height = 100)
+
+
+########################################
+p.newSlide()
+p.title("**Delayed-choice quantum eraser: Can we erase the past?**")
+
+p.leftImage("./QIC_Figures/QIC10_Science_cover.jpg", height=400)
+
+p.rightImage("./QIC_Figures/QIC10_Science_307_875_2005.png", height=400)
 
 
 ########################################

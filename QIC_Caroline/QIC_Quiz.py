@@ -19,7 +19,7 @@ p = Presentation(
 
 p.newSlide()
 
-p.title("** QIC Quiz **")
+p.title("** QLM Quiz **")
 
 p.makeGrid(3,3)
 
@@ -27,11 +27,59 @@ p.gridImage(0,1,"./QIC_Figures/dark_side.png", height = 400)
 
 p.gridIFrame(2,1,"./QIC_Figures/time.mp3")
 
+
+
+p.newQuiz(#(d)
+    questionImage="./Figures/Maxwell.jpg",
+    questionText="##Which equation contains a new term introduced by Maxwell?",
+    answersText=[
+        r"$\nabla \cdot \mathbf{E}=\frac{\rho}{\varepsilon_0}$",
+        r"$\nabla \times \mathbf{E} = -\frac{\partial \mathbf{B}}{\partial t}$",
+        r"$\nabla \cdot \mathbf{B} = 0$",
+        r"$\nabla \times \mathbf{B} = \mu_0 ~\mathbf{j} + \varepsilon_0 \mu_0 \frac{\partial \mathbf{E}}{\partial t}$",
+    ],
+)
+
+p.newQuiz(#(b)
+    questionText="#If a plane wave is incident on a lens, the wave fronts in the focal plane are",
+    answersText=[r"$({\rm a})$ Planar.",
+                 r"$({\rm b})$ Diverging.",
+                 r"$({\rm c})$ Converging."]
+)
+
+p.newQuiz(#(b)
+    questionText="#If a collimated laser beam is incident on a lens, the wave fronts in the focal plane are",
+    answersText=[r"$({\rm a})$ Planar.",
+                 r"$({\rm b})$ Diverging.",
+                 r"$({\rm c})$ Converging."]
+)
+
+p.newQuiz(#(a)
+    questionText="#If a collimated laser beam is incident on a lens, the beam waist of the focal beam is",
+    answersText=[r"$({\rm a})$ Before (upstream of) the focal plane.",
+                 r"$({\rm b})$ In the focal plane.",
+                 r"$({\rm c})$ Beyond (downstream of) the focal plane."]
+)
+
+
+p.newQuiz( # (c)
+    questionImage="./Figures/fourier.png",
+    questionText="##Which of the following is the Fourier transform of M?",
+    answersImage=[
+        "./Figures/Z.png",
+        "./Figures/A.png",
+        "./Figures/M.png",
+        "./Figures/N.png",
+        "./Figures/W.png",
+        "./Figures/X.png",
+    ],
+)
+
 ########################################
 ############# QUIZ  ##############
 ########################################
 
-p.newQuiz(
+p.newQuiz(# (d) and (e)
     questionImage="./Figures/Bohr.jpg",
     questionText=r"""## Which of the following are superpositions of the form, $\vert \psi\rangle = \textstyle{1\over\sqrt{2}}\left( \vert 0 \rangle \pm  \vert 1 \rangle \right)$ ?""",
     answersImage=[
@@ -48,42 +96,63 @@ p.newQuiz(
 ############# QUIZ slide ##############
 ########################################
 
-p.newQuiz(
+p.newQuiz(# (c)
     questionText="#The amount of information that can be stored in one qubit is",
-    answersText=[r"One bit.",
-                 r"Two bits.",
-                 r"Infinite.",
-                 r"In depends on the measurement."]
+    answersText=[r"$({\rm a})$ One bit.",
+                 r"$({\rm b})$ Two bits.",
+                 r"$({\rm c})$ Infinite.",
+                 r"$({\rm d})$ In depends on the measurement."]
 )
 
 ########################################
 ############# QUIZ slide ##############
 ########################################
 
-p.newQuiz(
+p.newQuiz(# (a)
     questionText="#The amount of information that can be retrieved from one qubit is",
-    answersText=[r"One bit.",
-                 r"Two bits.",
-                 r"Infinite.",
-                 r"In depends on the measurement."]
+    answersText=[r"$({\rm a})$ One bit.",
+                 r"$({\rm b})$ Two bits.",
+                 r"$({\rm c})$ Infinite.",
+                 r"$({\rm d})$ In depends on the measurement."]
 )
 
 ########################################
 ############# QUIZ  ##############
 ########################################
 
-p.newQuiz(
-#    questionImage="./Quiz_figures/Maxwell.jpg",
+p.newQuiz( # (c) (d) and (e)
+    questionImage="./QIC_Figures/QIC2_Bloch_1.png",
     questionText=r"##In the Bloch sphere representation, which of the following state vectors lie in the $yz$ plane?",
     answersText=[
-        r"\begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} 0  \\\ 1 \end{array}\right)\end{eqnarray}",
-        r"\begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} \cos\textstyle{\theta\over 2}  \\\ {\rm e}^{{\rm i}\pi}\sin\textstyle{\theta\over 2} \end{array}\right)\end{eqnarray}",
-        r"\begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} -{\rm i}  \\\ {\rm i} \end{array}\right)\end{eqnarray}",
-        r"\begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}} \left(\begin{array}{c} -{\rm i}  \\\ 1 \end{array}\right)\end{eqnarray}",
-        r"\begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{-{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
-        r"\begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
+        r"$({\rm a})$ \begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} 0  \\\ 1 \end{array}\right)\end{eqnarray}",
+        r"$({\rm b})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} -{\rm i}  \\\ {\rm i} \end{array}\right)\end{eqnarray}",
+        r"$({\rm c})$ \begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} \cos\textstyle{\theta\over 2}  \\\ {\rm e}^{{\rm i}\pi/2}\sin\textstyle{\theta\over 2} \end{array}\right)\end{eqnarray}",
+        r"$({\rm d})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}} \left(\begin{array}{c} -{\rm i}  \\\ 1 \end{array}\right)\end{eqnarray}",
+        r"$({\rm e})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{-{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
+        r"$({\rm f})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
      ],
 )
+
+
+p.newQuiz(# (b) and (d)
+    questionImage="./Figures/Bell.jpg",
+    questionText=r"Photon pairs are prepared in the Bell state, \begin{eqnarray}\vert \Phi^+ \rangle & = &\frac{1}{\sqrt{2}}\left(\vert {\sf HH} \rangle+\vert {\sf VV} \rangle\right)\end{eqnarray} ",
+    answersText=[
+        r"$({\rm a})$ If Alice and Bob both measure in the same basis they sometimes get the same result.",
+        r"$({\rm b})$ If Alice and Bob both measure in the same basis they always get the same result.",
+        r"$({\rm c})$ If Alice and Bob measure in a different same basis they never get the same result.",
+        r"$({\rm d})$ If Alice and Bob measure in a different same basis they sometimes get the same result.",
+     ],
+)
+
+p.newQuiz(
+#    questionImage="./Figures/Bell.jpg",
+    questionText=r"What was your score?",
+    answersText=[
+        r"0-4",r"5-8",r"8-12",r"13",r"14",r"15",
+     ],
+)
+
 
 ########################################
 #############  New slide  ##############
@@ -105,58 +174,6 @@ p.rightIFrame("https://www.youtube.com/embed/41Jc75tQcB0?start=509&end=521", hei
 
 p.save("./QIC_Quiz.html")
 
-# LIST OF POSSIBLE ELEMENTS:
-#
-### p.newSlide()   followed by some number of
-#
-# p.title(markdown_text, fontSize=1):
-#
-# p.leftText(markdown_text, fontSize=1)
-# p.rightText(markdown_text, fontSize=1)
-# p.spanText(markdown_text, fontSize=1)
-# p.spanCenterText(markdown_text, fontSize=1)
-#
-# p.leftImage(fileName, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.rightImage(fileName, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.spanImage(fileName, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.spanCenterImage(fileName, textBelow=None, textAbove=None, height=None, fontSize=1)
-#
-# p.leftIFrame(url, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.rightIFrame(url, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.spanIFrame(url, textBelow=None, textAbove=None, height=None, fontSize=1):
-# p.spanCenterIFrame(url, textBelow=None, textAbove=None, height=None, fontSize=1)
-#
-# p.leftMyCamera(height=None)
-# p.rightMyCamera(height=None)
-# p.spanMyCamera(height=None)
-# p.spanCenterMyCamera(height=None)
-#
-# p.leftMP4(source, height=None):
-# p.rightMP4(source, height=None)
-# p.spanMP4(source, height=None):
-# p.spanCenterMP4(source, height=None):
-#
-###    OR  grid layout
-#
-# p.newSlide()   followed by
-# p.makeGrid(rows, columns, padding="0.3em")    followed by some number of
-#
-# p.gridText(row, column, markdown_text, fontSize=1)
-# p.gridImage(row, column, fileName, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.gridIFrame(row, column, url, textBelow=None, textAbove=None, height=None, fontSize=1)
-# p.gridMyCamera(row, column, height=None)
-# p.gridMP4(row, column, source, height=None):
-#
-###    OR quiz
-# p.newQuiz(questionText=None, questionImage=None, answersText = None, answersImage=None, fontSize=1 )
-#
-#   NOTE: quiz does not have p.newSlide before
-#   NOTE: Quiz questoin can use both questionText and questionImage
-#         but that Quiz answer can use EITHER answersText list or answersImage list
-#         and maximum number of answers options supported currently is 6
-#
-###  NOTE: markdown text input
-#          it's best to enclose it between    r""" ... """
-#          (note r before the first tripple of ")
-#          as in this way multiline input and LaTeX work fine
-#
+
+
+

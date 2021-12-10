@@ -92,6 +92,28 @@ p.gridImage(2,3,"./QIC_Figures/QIC1_semi.png", height = 100,  textBelow="Borjan 
 
 ########################################
 p.newSlide()
+p.title(r"""## Why atoms? Atoms, lasers and qubits """)
+
+p.makeGrid(1,2)
+
+p.gridImage(0,0,"./QIC_Figures/QIC11_Toric_super.png", height = 600, textBelow="Google: 31 qubits, 98 people", fontSize = 0.5)
+
+p.gridImage(0,1,"./QIC_Figures/QIC11_Toric_Rydberg.png", height = 600, textBelow="Harvard: 219 qubits, 16 people", fontSize = 0.5)
+
+########################################
+p.newSlide()
+p.title(r"""## Why atoms? Atoms, lasers and qubits """)
+
+p.makeGrid(1,2)
+
+p.gridImage(0,0,"./QIC_Figures/QIC11_Toric_Rydberg.png", height = 600, textBelow="Harvard: 219 qubits, 16 people", fontSize = 0.5)
+
+p.gridImage(0,1,"./QIC_Figures/QIC11_Toric_Rydberg_Fig1.png", height = 600, textBelow="Harvard: 219 qubits, 16 people", fontSize = 0.5)
+
+
+
+########################################
+p.newSlide()
 p.title("Part II")
 
 p.spanCenterText(r"""

@@ -133,12 +133,13 @@ p.makeGrid(4,4)
 
 p.gridImage(0,3,"./QIC_Figures/QIC18_levine_1.png", height = 100)
 p.gridImage(1,3,"./QIC_Figures/QIC18_levine_2.png", height = 100)
-p.gridImage(2,3,"./QIC_Figures/QIC18_levine_3.png", height = 100)
+p.gridImage(2,3,"./QIC_Figures/QIC18_levine_3.png", height = 100,
+textBelow =r"""Levine *et al*, PRL, **123**, 170503 (2019) """, fontSize = 0.5)
 
 
 ########################################
 p.newSlide()
-p.title("CNOT: using electron spins in Si ")
+p.title("CNOT: Si spin qubits ")
 
 p.makeGrid(4,4)
 
