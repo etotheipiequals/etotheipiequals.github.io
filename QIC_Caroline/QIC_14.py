@@ -16,32 +16,29 @@ p = Presentation(
 ########################################
 p.newSlide()
 p.title("QIC.14: Ph 30, 14.00 Monday Feb 24, 2022")
-p.makeGrid(4,4)
-p.gridText(0,0,r"""
+p.leftText(r"""
 
 ** QIC.13 Summary **
 
-""", fontSize = 1.0)
-
-p.gridText(0,1,r"""
-
-""", fontSize = 1.0)
-
-p.gridText(1,1,r"""
 
 **Optical tweezers**
 
 
-* Trap depth $U_0$.
+* Trap depth $U_0$: How does it depend on laser power, beam size, wavelength?
 
 
 * Trap freq: $\omega_{\rm rad}$, $\omega_{\rm ax}$.
+
+* Scattering rate $R_{\rm spont} = \Gamma P_{\vert {\rm e}\rangle}$, 
+
+
+* OBE steady state, $\vert \Delta\vert \gg \Omega \gg \Gamma$, $P_{\vert {\rm e}\rangle}=\Omega^2/2\vert \Delta\vert^2$
 
 
 """, fontSize = 0.5)
 
 
-p.gridImage(1,2,"./QIC_Figures/QIC13_tweezer_static.png", height = 300)
+p.rightImage("./QIC_Figures/QIC13_tweezer_static.png", height = 600)
 
 
 
@@ -49,34 +46,38 @@ p.gridImage(1,2,"./QIC_Figures/QIC13_tweezer_static.png", height = 300)
 p.newSlide()
 p.title("QIC.14: Outline")
 
-p.makeGrid(2,2)
+p.makeGrid(3,3)
 
 
 p.gridText(0,0,r"""
 
 DVC1: Initialisation of an atom array
 
-* Mainly Sr: Rb, Cs QIC.15-16
+* This lecture [QIC.14] mainly Sr.
 
+* [QIC.15-16] Rb, Cs 
 
 * Laser slowing and laser cooling - spontaneous force
 
 
+""", fontSize = 0.5)
 
-""", fontSize = 1.0)
-
-p.gridImage(0,1,"./QIC_Figures/QIC7_Sr_tweezer_0.png", height = 150)
+p.gridImage(0,1,"./QIC_Figures/QIC7_Sr_tweezer_0.png", height = 240)
 
 p.gridText(1,0,r"""
 
 * Laser cooling inside a trap - sideband cooling
 
+* Different transitions used for slowing, sideband cooling, qubit.
 
-""", fontSize = 1.0)
+
+""", fontSize = 0.5)
 
 
 p.gridImage(1,1,"./QIC_Figures/QIC14_sideband_cooling.png", height = 150)
 
+
+p.gridImage(1,2,"./QIC_Figures/QIC14_Sr_levels.png", height = 120)
 
 ########################################
 p.newSlide()
@@ -110,10 +111,10 @@ p.gridText(1,3,r"""
 
 (i) In some atom quantum computers, it is necessary to slow an atomic beam using a counter-propagating laser. Write an equation for the minimum stopping distance in terms of the mass, $m$, and initial speed, $v$, of the atoms, the lifetime of the excited state, $\tau$, and the laser wavelength $\lambda$. [2 marks]
 
-(ii) Discuss  the feasibility of slowing $^{88}$Sr atoms emitted by an oven at $T=10^3$ K using light with $\lambda=689$~nm resonant with the intercombination line $^1{\rm S}_0\rightarrow ^3$P$_1$. The $^3{\rm P}_1$ has a lifetime $\tau=21.5~\mu$s.
+(ii) Discuss  the feasibility of slowing $^{88}$Sr atoms emitted by an oven at $T=10^3$ K using light with $\lambda=689\; $nm resonant with the intercombination line $^1{\rm S}_0\rightarrow ^3$P$_1$. The $^3{\rm P}_1$ has a lifetime $\tau=21.5 \; \mu$s.
 [2 marks]
 
-(iii) By what factor is the stopping distance reduced if we switch to the $^1{\rm S}_0\rightarrow ^1$P$_1$ transition, with $\lambda=461$~nm and $\tau=5.27~$ns? [1 mark]
+(iii) By what factor is the stopping distance reduced if we switch to the $^1{\rm S}_0\rightarrow ^1$P$_1$ transition, with $\lambda=461\; $nm and $\tau=5.27\; $ns? [1 mark]
 
 """, fontSize = 0.5)
 
@@ -126,10 +127,10 @@ p.gridText(1,3,r"""
 
 (i) In some atom quantum computers, it is necessary to slow an atomic beam using a counter-propagating laser. Write an equation for the minimum stopping distance in terms of the mass, $m$, and initial speed, $v$, of the atoms, the lifetime of the excited state, $\tau$, and the laser wavelength $\lambda$. [2 marks]
 
-(ii) Discuss  the feasibility of slowing $^{88}$Sr atoms emitted by an oven at $T=10^3$ K using light with $\lambda=689$~nm resonant with the intercombination line $^1{\rm S}_0\rightarrow ^3$P$_1$. The $^3{\rm P}_1$ has a lifetime $\tau=21.5~\mu$s.
+(ii) Discuss  the feasibility of slowing $^{88}$Sr atoms emitted by an oven at $T=10^3$ K using light with $\lambda=689$~nm resonant with the intercombination line $^1{\rm S}_0\rightarrow ^3$P$_1$. The $^3{\rm P}_1$ has a lifetime $\tau=21.5\;\mu$s.
 [2 marks]
 
-(iii) By what factor is the stopping distance reduced if we switch to the $^1{\rm S}_0\rightarrow ^1$P$_1$ transition, with $\lambda=461$~nm and $\tau=5.27~$ns? [1 mark]
+(iii) By what factor is the stopping distance reduced if we switch to the $^1{\rm S}_0\rightarrow ^1$P$_1$ transition, with $\lambda=461\;$nm and $\tau=5.27\;$ns? [1 mark]
 
 """, fontSize = 0.5)
 
@@ -140,7 +141,7 @@ p.gridImage(2,1,"./QIC_Figures/Sr_MOT.jpg", height = 150, textBelow = r"""Matthe
 p.newSlide()
 p.title("QIC.14: Laser cooling inside a trap - sideband cooling")
 
-p.makeGrid(4,4)
+p.makeGrid(3,3)
 
 
 p.gridText(0,0,r"""
@@ -152,9 +153,9 @@ DVC1: Initialisation of an atom array
 """, fontSize = 0.5)
 
 
-p.gridImage(0,3,"./QIC_Figures/QIC14_sideband_cooling.png", height = 150)
+p.gridImage(0,2,"./QIC_Figures/QIC14_sideband_cooling.png", height = 150)
 
-p.gridImage(2,3,"./QIC_Figures/QIC14_Sr_sideband_2018.png", height = 150, textBelow = r"""https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.041054""", fontSize = 0.5)
+p.gridImage(1,2,"./QIC_Figures/QIC14_Sr_sideband_2018.png", height = 240, textBelow = r"""https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.041054""", fontSize = 0.25)
 
 
 ########################################
@@ -165,14 +166,14 @@ p.makeGrid(4,4)
 
 p.gridText(0,3,r"""
 
-DU has decided to build a Sr atom quantum computer. They build a tweezer array using a laser at the *magic* wavelength, $\lambda=813$~nm, such that the trapping potentials for the $\vert 0\rangle=\vert ^1{\rm S}_1\rangle$ and $\vert 1\rangle=\vert ^3{\rm P}_0\rangle$ qubit states are identical. Easy tweezer has a laser power $P=1$~mW, and spot spot $w_0=1~\mu$m. 
+DU has decided to build a Sr atom quantum computer. They build a tweezer array using a laser at the *magic* wavelength, $\lambda=813$~nm, such that the trapping potentials for the $\vert 0\rangle=\vert ^1{\rm S}_1\rangle$ and $\vert 1\rangle=\vert ^3{\rm P}_0\rangle$ qubit states are identical. Easy tweezer has a laser power $P=1$~mW, and spot spot $w_0=1\;\mu$m. 
 
 (i) Write an expression for the trap depth, $U_0$ in terms of $P$, $w_0$, the laser detuning, $\Delta$, and the decay rate $\Gamma$.
 Verify that your formula has the correct dimensions. 
 
 (ii) Estimate whether they are in the well-resolved sideband regime. 
 
-[Hints: The trap depth is $U=\hbar \Omega^2/4\Delta$, where $\Omega^2=\Gamma^2 I/I_{\rm s}$ and $I_{\rm s}=(\pi/3)(hc\Gamma/\lambda_0^2)$. The $^1P_1$ and $^3P_1$ states have decay rates, $\Gamma_{\rm 461}=2\pi(30.2~{\rm MHz})$ and $\Gamma_{\rm 689}=2\pi(7.4~{\rm kHz})$, where the subscript indicate the wavelength $\lambda_0$ in nanometers.]
+[Hints: The trap depth is $U=\hbar \Omega^2/4\Delta$, where $\Omega^2=\Gamma^2 I/2I_{\rm s}$ and $I_{\rm s}=(\pi/3)(hc\Gamma/\lambda_0^2)$. The $^1P_1$ and $^3P_1$ states have decay rates, $\Gamma_{\rm 461}=2\pi\;(30.2\;{\rm MHz})$ and $\Gamma_{\rm 689}=2\pi\;(7.4\;{\rm kHz})$, where the subscript indicate the wavelength $\lambda_0$ in nanometers.]
 
 
 """, fontSize = 0.5)
@@ -182,11 +183,11 @@ Verify that your formula has the correct dimensions.
 p.newSlide()
 p.title(r"""**Sr atom array: Cool in a deeper 515 nm tweezer**""")
 
-p.makeGrid(4,4)
+p.makeGrid(3,3)
 
-p.gridImage(0,3,"./QIC_Figures/QIC14_Sr_515_lattice.png", height = 300)
+p.gridImage(0,2,"./QIC_Figures/QIC14_Sr_515_lattice.png", height = 240)
 
-p.gridImage(2,3,"./QIC_Figures/QIC14_Sr_sideband_2018.png", height = 150, textBelow = r"""https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.041054""", fontSize = 0.5)
+p.gridImage(1,2,"./QIC_Figures/QIC14_Sr_sideband_2018.png", height = 240, textBelow = r"""https://journals.aps.org/prx/abstract/10.1103/PhysRevX.8.041054""", fontSize = 0.25)
 
 ########################################
 p.newSlide()

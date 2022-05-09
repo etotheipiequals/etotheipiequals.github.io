@@ -16,7 +16,7 @@ p = Presentation(
 ########################################
 p.newSlide()
 p.title("QIC.18: Ph 30, 14.00 Thursday Mar 10, 2022")
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 p.gridText(0,0,r"""
 
 ** QIC.17 Summary **
@@ -25,17 +25,22 @@ p.gridText(0,0,r"""
 
 p.gridText(1,0,r"""
 
+
 **Rydberg blockade **
 
+""", fontSize = 1.0)
+
+p.gridImage(0,1,"./QIC_Figures/QIC17_Rydberg_1.png", height = 200, textBelow=r"Properties scale with principal quantum number, $n$", fontSize = 0.5)
+
+p.gridImage(1,1,"./QIC_Figures/QIC17_Blockade_4.png", height = 240)
 
 
-""", fontSize = 0.5)
+########################################
+p.newSlide()
+p.title("QIC.17 Rydberg blockade")
 
-p.gridImage(1,3,"./QIC_Figures/QIC17_Rydberg_1.png", height = 100, textBelow="", fontSize = 0.5)
-
-p.gridImage(2,3,"./QIC_Figures/QIC17_Blockade_4.png", height = 100)
-
-
+p.leftIFrame("./QIC_Figures/Blockade_dots.html", height = 600)
+p.rightImage("./QIC_Figures/QIC17_Blockade_6.png", height = 400)
 
 
 ########################################
@@ -112,8 +117,8 @@ p.title("CNOT Pulse Sequence ")
 p.makeGrid(4,4)
 
 p.gridImage(0,3,"./QIC_Figures/QIC18_pulse_1and5.png", height = 100)
-p.gridImage(1,3,"./QIC_Figures/QIC18_pulse_3.png", height = 100)
-p.gridImage(2,3,"./QIC_Figures/QIC18_pulse_2and4.png", height = 100)
+p.gridImage(1,3,"./QIC_Figures/QIC18_pulse_2and4.png", height = 100)
+p.gridImage(2,3,"./QIC_Figures/QIC18_pulse_3.png", height = 100)
 
 
 ########################################
@@ -122,18 +127,18 @@ p.title("Controlled Phase using Rydberg blockade ")
 
 p.makeGrid(2,2)
 
-p.gridImage(0,1,"./QIC_Figures/QIC18_pulse_234.png", height = 100)
+p.gridImage(0,1,"./QIC_Figures/QIC18_pulse_234.png", height = 200)
 
 
 ########################################
 p.newSlide()
 p.title("Experiment ")
 
-p.makeGrid(4,4)
+p.makeGrid(2,2)
 
-p.gridImage(0,3,"./QIC_Figures/QIC18_levine_1.png", height = 100)
-p.gridImage(1,3,"./QIC_Figures/QIC18_levine_2.png", height = 100)
-p.gridImage(2,3,"./QIC_Figures/QIC18_levine_3.png", height = 100,
+p.gridImage(0,0,"./QIC_Figures/QIC18_levine_1.png", height = 200)
+p.gridImage(0,1,"./QIC_Figures/QIC18_levine_2.png", height = 200)
+p.gridImage(1,0,"./QIC_Figures/QIC18_levine_3.png", height = 200,
 textBelow =r"""Levine *et al*, PRL, **123**, 170503 (2019) """, fontSize = 0.5)
 
 
@@ -141,11 +146,11 @@ textBelow =r"""Levine *et al*, PRL, **123**, 170503 (2019) """, fontSize = 0.5)
 p.newSlide()
 p.title("CNOT: Si spin qubits ")
 
-p.makeGrid(4,4)
 
 
-p.gridImage(1,3,"./QIC_Figures/QIC18_Si_CNOT.png", height = 100,  textBelow="Mills et al, arXiv:2111.1937", fontSize = 0.5)
-p.gridImage(2,3,"./QIC_Figures/QIC18_Si_CNOT_SWAP.png", height = 100,  textBelow="Mills et al, arXiv:2111.1937", fontSize = 0.5)
+
+p.leftImage("./QIC_Figures/QIC18_Si_CNOT.png", height = 300,  textBelow="Mills et al, arXiv:2111.1937", fontSize = 0.5)
+p.rightImage("./QIC_Figures/QIC18_Si_CNOT_SWAP.png", height = 450,  textBelow="Mills et al, arXiv:2111.1937", fontSize = 0.5)
 
 
 ########################################
@@ -164,6 +169,37 @@ p.rightText(r"""
 * Be able to write matrices to describe any of the pulses in a prescribed basis.
 
 """, fontSize = 1.0)
+
+
+########################################
+#############  New slide  ############## 
+########################################
+
+p.newSlide()
+
+p.title("18 years of QIC!")
+p.leftImage("./Figures/QIC_2004.jpg", height = 600, textAbove="2004", fontSize = 1.0)
+p.rightImage("./QIC_Figures/QIC18_QC_Companies.jpg", height = 500, textAbove="2021", fontSize = 1.0)
+
+########################################
+#############  New slide  ############## 
+########################################
+
+p.newSlide()
+
+p.title("The future?")
+p.leftText(r"""
+
+* In QM/QI information is never lost. 
+
+* In GR information is lost.
+
+* If QM is a theory of the universe we must be able to reconcile they too.
+
+""", fontSize = 1.0)
+
+p.rightImage("./QIC_Figures/QIC18_Information_Loss_Puzzle.png", height = 500, textAbove="", fontSize = 1.0)
+
 
 ########################## SAVE
 p.save("./QIC_18.html")

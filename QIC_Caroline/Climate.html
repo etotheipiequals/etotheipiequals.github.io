@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset=utf-8>
+	<title>Caroline presentation</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./caroline/images/caroline.ico">
+	<link rel="apple-touch-icon" href="./caroline/images/caroline_192.png">
+	<meta name="description" content=". Presentation made with Caroline, open-source Python framework for engaging science talks.">
+	<meta name="keywords" content=", caroline" />
+	<meta name="theme-color" content="#F0F0F0" />
+	<!--<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet" async defer>-->
+	<link rel="stylesheet" type="text/css" href="./caroline/style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content="">
+	<meta property="og:title" content="Caroline presentation" />
+  <meta property="og:description" content="" />
+	<meta name="twitter:image" content="">
+	<meta name=”twitter:card” content="summary" />
+	<meta name=”twitter:site” content="" />
+	<meta name=”twitter:title” content="Caroline presentation" />
+	<meta name=”twitter:description” content="" />
+</head>
+
+<body>
+<div id="confirmd">
+	<div>
+		<h3>Please confirm</h3>
+		<h2 id="confirmmessage"></h2>
+		<input type="button" id="bno" value="Cancel"><br/>
+		<input type="button" id="byes" value="Yes, clear roundtable">
+	</div>
+</div>
+
+<div id="slidespace">
+</div>
+<div id="cursor" class="cursor">
+  <div class="cursor-icon">	<div class="cursor-name" id="cname0"></div></div>
+
+</div>
+
+<div id="controlspace">
+	<div class="control" title="Exit roundtable"></div>
+	<div class="control" title="Toggle full screen"></div>
+	<div class="control" title="Next slide"></div>
+	<div class="control" title="Previous slide"></div>
+	<div class="control" title="Use pointer"></div>
+	<div class="control" title="Use pen"></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="Reduce pen line thickness"></div>
+	<div class="control" title="Increase pen line thickness"></div>
+	 <div class="control" title="Add text or LaTeX"></div>
+	<div class="control" title="Roundtable"></div>
+	<div class="control" title="Share image, PDF, Jupyter notebook or source code"><input type="file" id="selectedimage"></div>
+	<div class="control" title="Save current view as image"></div>
+	<div class="control" title="Increase text size"></div>
+	<div class="control" title="Decrease text size"></div>
+	<div class="control" title="Remove last annotation"></div>
+	<div class="control" title="Clear surface"></div>
+	<div class="control" title="Add slide surface"></div>
+</div>
+<div id="cameraspace">
+	<div class="camera" title="Add camera in the corner"></div>
+</div>
+<div id="roundtable_participants">
+</div>
+<div id="notify">
+	<span></span>
+</div>
+<div id="carolinelogo">
+</div>
+
+
+
+	<script>
+	MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [             // start/end delimiter pairs for display math
+				['$$', '$$'],
+				['\\[', '\\]']
+			],
+			processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+			packages: {'[+]': ['bbox']}
+		},
+		svg: {
+			fontCache: 'global'
+		},
+		loader: {load: ['[tex]/bbox']}
+	};
+	</script>
+	<script id="MathJax-script" src="./caroline/js/mathjax/tex-chtml.js"></script>
+	<script src="./caroline/js/socket.io.min.js"></script>
+	<script src="./caroline/js/html2canvas.min.js"></script>
+	<script src="./caroline/js/pdf.min.js"></script>
+	<script src='./caroline/js/jspdf.umd.min.js'></script>
+	<script>
+	 var pdfjsLib = window['pdfjs-dist/build/pdf'];
+	 pdfjsLib.GlobalWorkerOptions.workerSrc = './caroline/js/pdf.worker.min.js';
+	 var { jsPDF } = window["jspdf"];
+  </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<link id="codelightcss" rel="stylesheet" href="./caroline/style/atom-one-light.min.css" defer disabled="disabled">
+	<link id="codedarkcss" rel="stylesheet" href="./caroline/style/atom-one-dark.min.css" defer>
+	<script src="./caroline/js/highlight.min.js" defer></script>
+	<script src="./caroline/js/markdown-it.min.js" defer></script>
+	<script src="./caroline/js/markdown-it-mathjax.js" defer></script>
+	<script src='./caroline/js/nbv.js' defer></script>
+	<script src="./caroline/js/roundtable_app.js"></script>
+
+  <script>
+		var roundTable = false;
+		var username = "Lecturer";
+		var room = null;  // roundtable room
+	 	var data = {"slides": [{"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eThe trouble with history?\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Population.png\u0027 alt=\u0027image ./Figures/Population.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003cp\u003ePopulation data from \u003ca href=\"https://www.gapminder.org/data/documentation/gd003/\"\u003ehttps://www.gapminder.org/data/documentation/gd003/\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003eWhat is amazing?\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eThe trouble with history?\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Population.png\u0027 alt=\u0027image ./Figures/Population.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003cp\u003ePopulation data from \u003ca href=\"https://www.gapminder.org/data/documentation/gd003/\"\u003ehttps://www.gapminder.org/data/documentation/gd003/\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eWhat is amazing?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFactor of 10 every 3000 years.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eThe trouble with history?\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Population.png\u0027 alt=\u0027image ./Figures/Population.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003cp\u003ePopulation data from \u003ca href=\"https://www.gapminder.org/data/documentation/gd003/\"\u003ehttps://www.gapminder.org/data/documentation/gd003/\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eWhat is amazing?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFactor of 10 every 3000 years.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eAfter 1800, factor of 10 in 200 years. Why?  \u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eThe trouble with history?\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Population.png\u0027 alt=\u0027image ./Figures/Population.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003cp\u003ePopulation data from \u003ca href=\"https://www.gapminder.org/data/documentation/gd003/\"\u003ehttps://www.gapminder.org/data/documentation/gd003/\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eWhat is amazing?\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFactor of 10 every 3000 years.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eAfter 1800, factor of 10 in 200 years. Why?  \u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cem\u003eIt is doubtful whether Homo sapiens will still be around a thousand years from now\u003c/em\u003e, YN Harari, \u003cem\u003eSapiens\u003c/em\u003e, p.7, 2011.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eWhat else was changing?\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/PopulationCO2.png\u0027 alt=\u0027image ./Figures/PopulationCO2.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003cp\u003ePopulation data from \u003ca href=\"https://www.gapminder.org/data/documentation/gd003/\"\u003ehttps://www.gapminder.org/data/documentation/gd003/\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eBlue: Ice Core data\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003ePurple: Atmospheric measurements\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eThe trouble with economics\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Candle.jpg\u0027 alt=\u0027image ./Figures/Candle.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003eCandle 5 to 80 W (of which 4 W is light)\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Millet.jpg\u0027 alt=\u0027image ./Figures/Millet.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003eMan with a Hoe, Jean-Francois Millet1862 Getty Museum, \u003ca href=\"https://www.getty.edu/art/collection/object/103RGZ\"\u003ehttps://www.getty.edu/art/collection/object/103RGZ\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 3 / 4; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eHuman 100 W. Short bursts up to a few hundred. 2000 calories $=$ 8.4 million Joles divide by 24 hours and 3600 second per hour given 100 W\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eThe trouble with economics\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/PloughEgypt.jpg\u0027 alt=\u0027image ./Figures/PloughEgypt.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003cp\u003e\u003ca href=\"https://www.britannica.com/technology/plow\"\u003ehttps://www.britannica.com/technology/plow\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/PloughModern.jpg\u0027 alt=\u0027image ./Figures/PloughModern.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003e\u003ca href=\"https://blog.oliver-meili.name/\"\u003ehttps://blog.oliver-meili.name/\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 3 / 4; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eOx 350 W. Two oxen $=$ A horse   Horse power 746 W\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eThe trouble with economics\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Killhope.jpg\u0027 alt=\u0027image ./Figures/Killhope.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003eWater Wheels 2-200 kW\u003c/p\u003e\n\u003cp\u003eKillhope Wheel \u003ca href=\"https://live.staticflickr.com/4383/36796080161_21a6e8e77c_b.jpg\"\u003ehttps://live.staticflickr.com/4383/36796080161_21a6e8e77c_b.jpg\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Smil.jpg\u0027 alt=\u0027image ./Figures/Smil.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003eEnergy and Civilisation: A history MIT Press 2017\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eThe trouble with economics\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Watt1788.jpg\u0027 alt=\u0027image ./Figures/Watt1788.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003eNewcomen 1712 3.75kW\nWatt 1788 \u003ca href=\"https://www.britannica.com/technology/rotative-engine\"\u003ehttps://www.britannica.com/technology/rotative-engine\u003c/a\u003e \nWatt 1795 20kW \nWatt 1800 100 kW\u003c/p\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/CalderHall1956.jpg\u0027 alt=\u0027image ./Figures/CalderHall1956.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003eCalder Hall 4$\\times$ 60 MHz $=$ 240 MW\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eWhere does the energy come from?\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/EnergyConsumptionBySource.png\u0027 alt=\u0027image ./Figures/EnergyConsumptionBySource.png\u0027 class=\u0027simage\u0027 style=\u0027height:400px;max-height:400px;\u0027\u003e\u003cp\u003eAbout 80% fossil energy.\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eWho did it?\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/EmissionsSelectedCountries.png\u0027 alt=\u0027image ./Figures/EmissionsSelectedCountries.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eWho did it?\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/EmissionsPerCapita.png\u0027 alt=\u0027image ./Figures/EmissionsPerCapita.png\u0027 class=\u0027simage\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eWorld Trade\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/ExportTrade.png\u0027 alt=\u0027image ./Figures/ExportTrade.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eHistoric emissions\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/CarbonBriefHistoric.jpg\u0027 alt=\u0027image ./Figures/CarbonBriefHistoric.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:450px;max-height:450px;\u0027\u003e\u003cp\u003e\u003ca href=\"https://www.carbonbrief.org/analysis-which-countries-are-historically-responsible-for-climate-change\"\u003ehttps://www.carbonbrief.org/analysis-which-countries-are-historically-responsible-for-climate-change\u003c/a\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}]};
+		var logoURL = "././presentation_files/Durham_University_Logo.png";
+		var leftHanded = true;
+		var drawingHelp = "lines";//"lines" or "dots";
+	  var drawingHelpIntensity = 0.04;
+	  var roundTableCallBack = null;
+		var roundTableServer = "https://roundtable.researchx3d.com";
+		var roundTableAuth = "osagASfew8t31qNqfHQ3Gq";
+		var roundTableExit = null;
+		var presentationServer = "https://etotheipiequals.github.io/QIC_Caroline/Climate.html";
+		var presenter = true;
+	 	window.onload = initApp();
+ 	</script>
+
+</body>

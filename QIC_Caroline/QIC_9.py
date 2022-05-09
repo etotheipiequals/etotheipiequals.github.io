@@ -22,7 +22,9 @@ p.gridText(0,0,r"""
 
 p.gridText(0,1,r"""
 
-* Two qubit states
+* Two-qubit states 
+
+* Example: Bell states
 
 """, fontSize = 0.5)
 
@@ -35,18 +37,25 @@ $\vert\Psi^{\pm}\rangle
  =  \textstyle{1\over \sqrt{2}}(\vert 01 \rangle \pm \vert 10 \rangle)$
 """, fontSize = 0.5)
 
+p.gridText(0,3,r"""
 
-p.gridText(1,1,r"""
+* Entangled - non separable
 
-* Two qubit operators
+* Entanglment essential to QC.
 
 """, fontSize = 0.5)
 
-p.gridImage(1,2,"./equations/Ry_otimes_Ry.png", height = 100)
+p.gridText(1,1,r"""
+
+* Two-qubit operators
+
+""", fontSize = 0.5)
+
+p.gridImage(1,2,"./equations/Ry_otimes_Ry.png", height = 150)
 
 p.gridText(2,1,r"""
 
-* Non-separability of the Bell state
+* Irrotational property of a Bell state
 
 """, fontSize = 0.5)
 
@@ -62,6 +71,16 @@ p.gridText(0,0,r"""
 **Outline**
 
 """, fontSize = 1.0)
+
+p.gridText(0,1,r"""
+
+* How to produce a Bell state - using a quantum circuit?
+
+* Entangling operator - two-qubit gate (DVC2)
+
+
+
+""", fontSize = 0.5)
 
 p.gridText(1,0,r"""
 
@@ -230,8 +249,6 @@ textBelow =r""" https://quantum-computing.ibm.com/ and https://algassert.com/qui
 p.newSlide()
 p.title("Quantum circuits")
 p.spanCenterIFrame("https://algassert.com/quirk#circuit={%22cols%22:[[%22H%22],[%22%E2%80%A2%22,%22X%22]]}", height = 300) 
-
-
 
 
 ########################################

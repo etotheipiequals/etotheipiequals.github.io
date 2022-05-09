@@ -80,6 +80,17 @@ p.gridImage(0,1,"./QIC_Figures/QIC17_Rydberg_2.png", height = 100)
 
 ########################################
 p.newSlide()
+p.title("What are Rydberg atoms? Scaling properties ")
+
+
+
+p.spanCenterIFrame("./QIC_Figures/rydberg_wavefunctions.html", height = 1200)
+
+
+
+
+########################################
+p.newSlide()
 p.title("Interactions ")
 
 p.makeGrid(4,4)
@@ -91,7 +102,7 @@ p.gridImage(2,3,"./QIC_Figures/QIC17_vanderWaals_3.png", height = 100)
 
 ########################################
 p.newSlide()
-p.title("Rydberg blcokade")
+p.title("Rydberg blockade")
 
 p.makeGrid(4,4)
 
@@ -101,7 +112,7 @@ p.gridImage(2,3,"./QIC_Figures/QIC17_Blockade_3.png", height = 100)
 
 ########################################
 p.newSlide()
-p.title("Rydberg blcokade: eigenbasis")
+p.title("Rydberg blockade: eigenbasis")
 
 p.makeGrid(4,4)
 

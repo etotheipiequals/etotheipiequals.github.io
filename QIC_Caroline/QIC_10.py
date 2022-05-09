@@ -144,6 +144,23 @@ Test of complementarity
 
 """, fontSize = 1.0)
 
+p.rightImage("./QIC_Figures/interferometer_eraser_2.png", height=600)
+
+
+########################################
+p.newSlide()
+p.title("**Wheeler's delayed-choice experiment**")
+
+p.leftText(r"""
+
+Test of complementarity
+
+* We measure wave-like or particle-like properties but not both at the same time.
+
+* In an interferometer, either which-way or interence, not both.
+
+""", fontSize = 1.0)
+
 p.rightIFrame("./QIC_Figures/Quantum_Erasure.html", height=800)
 
 ########################################

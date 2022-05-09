@@ -68,7 +68,51 @@ p.gridText(1,0,r"""
 p.gridImage(1,1,"./Figures/Bell_irrotational.JPG", height = 200)
 
 
+########################################
+#############  New slide  ##############
+########################################
 
+p.newSlide()
+p.title("Two changes everything - quantum entanglement!")
+
+
+p.leftText(r"""
+** Richard Feynman **
+
+*Probability and uncertainty - the quantum mechanical view of nature*, 
+
+Messenger Letures, Cornell, November 18th, 1964.
+
+> *I think I can safely say that nobody understands quantum mechanics*
+
+""")
+
+p.rightIFrame("https://www.youtube.com/embed/41Jc75tQcB0?start=476&end=481", height=315)
+
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+
+p.title("What Richard Feynman said!")
+
+
+p.leftText(r"""
+... you'll get down a drain,
+
+... nobody has yet escaped,
+
+... nobody knows how it can be like that.
+           
+           """)
+p.rightIFrame("https://www.youtube.com/embed/41Jc75tQcB0?start=509&end=521", height=315)
+
+p.spanCenterText(r"""
+I have spent 30 years down that drain!
+""")
 
 
 ########################################
@@ -79,12 +123,72 @@ p.newSlide()
 p.title("Two-qubit states")
 
 p.makeGrid(4,4)
-p.gridText(0,2,r"""   
+
+
+p.gridText(0,3,r""" 
+
+A and B
+
+  
 $
 \vert\Psi\rangle 
  =  a_{00}\vert 00 \rangle + a_{01}\vert 01 \rangle + a_{10}\vert 10 \rangle + a_{11}\vert 11 \rangle$
 """, fontSize = 0.5)
 
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Two-qubit states")
+
+p.makeGrid(4,4)
+p.gridText(0,3,r"""   
+\begin{eqnarray}
+\vert\Psi\rangle 
+ =  a_{00}\vert 00 \rangle + a_{01}\vert 01 \rangle + a_{10}\vert 10 \rangle + a_{11}\vert 11 \rangle
+\end{eqnarray}
+""", fontSize = 0.5)
+
+
+p.gridText(1,2,r""" Reduced density matrix for A
+\begin{eqnarray}
+\rho_{\rm A} = {\rm Tr}_{\rm B}
+\left( 
+\rho
+\right)  \end{eqnarray}
+""", fontSize = 0.5)
+
+p.gridImage(2,3, "./QIC_Figures/QIC8_Bell_reduced.png", height = 100,
+#            textAbove="**The density matrix**",
+#            textBelow="$(u,v,w)$ are the components of the Bloch vector. All real."
+           )
+
+p.gridText(1,3,r"""   
+\begin{eqnarray}
+\left( 
+\begin{array}{cc} 
+a  + f & c + h  \\\
+i  + n & k + p  
+\end{array} 
+\right)
+=
+ {\rm Tr}_{\rm B}
+\left( 
+\begin{array}{cccc} 
+a  & b & c & d  \\\
+e  & f & g & h  \\\
+i  & j & k & l  \\\
+m  & n & o & p 
+\end{array} 
+\right)  
+\end{eqnarray}
+""", fontSize = 0.5)
+
+
+########################################
+#############  New slide  ##############
+########################################
 
 
 p.newSlide()

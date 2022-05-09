@@ -158,6 +158,14 @@ p.rightText(r"""
 
 """, fontSize = 1.0)
 
+########################################
+p.newSlide()
+p.title("QIC.16 2021 Long question")
+p.leftImage("./QIC_Figures/QIC16_2021_Exam_1.png", height = 600, textBelow="", fontSize = 0.5) 
+p.rightImage("./QIC_Figures/QIC16_2021_Exam_2.png", height = 600, textBelow="", fontSize = 0.5) 
+
+
+
 ########################## SAVE
 p.save("./QIC_16.html")
 

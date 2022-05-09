@@ -77,6 +77,8 @@ p.gridText(1,1,r"""
 
 p.gridImage(1,2,"./QIC_Figures/BlochDM_T2.png", height = 200)
 
+p.gridImage(0,2,"./QIC_Figures/QIC6_intro.png", height = 200)
+
 ########################################
 p.newSlide()
 p.title(r"""**Decay and decoherence: $T_1$ and $T_2$**""")

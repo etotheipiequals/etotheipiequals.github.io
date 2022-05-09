@@ -131,7 +131,7 @@ p.spanCenterText(r"""
 # Hieronymus Bosch 1450 - 1516
 """)
 
-p.spanCenterImage("./Figures/Bosch_2.jpg", height = 400) 
+p.spanCenterImage("./Figures/Bosch.jpg", height = 400) 
 
 
 

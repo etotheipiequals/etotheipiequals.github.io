@@ -174,6 +174,31 @@ p.gridText(0,2,r"""
 p.gridImage(0,3,"./QIC_Figures/QIC4_EMfield+qubit.png", height = 150,
             textBelow="", fontSize = 0.5)
 
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title(r"""**Qubit control using EM fields: ${\sf R}_z$ and ${\sf R}_y$ rotations **
+""")
+
+p.makeGrid(4,4)
+p.gridText(0,2,r"""
+
+\begin{eqnarray} {\cal H}_{\rm int} & = & 
+\frac{\hbar}{2}\left( 
+\begin{array}{cc} 
+\Delta & \Omega {\rm e}^{ - {\rm i}\phi_L }  \\\
+\Omega {\rm e}^{  {\rm i}\phi_L } & -\Delta
+\end{array}
+\right)  
+\end{eqnarray} 
+
+""", fontSize = 0.5)
+
+p.gridImage(0,3,"./QIC_Figures/QIC4_EMfield+qubit.png", height = 150,
+            textBelow="", fontSize = 0.5)
+
 
 ########################################
 #############  New slide  ##############
