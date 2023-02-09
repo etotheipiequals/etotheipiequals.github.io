@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>C. S. Adams Quantum and Optics</title>
+  <!-- This will likely appear on Google search after page is indexed  -->
+  <meta name="description" content="C. S. Adams">
+  <meta name="keywords" content="optics, quantum, climate, research, Durham university">
+  <!-- choose font on https://fonts.google.com/  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+   html{
+     height:100%;
+     overflow:hidden;
+   }
+   body{
+     font-family: 'Source Sans Pro', sans-serif;
+     min-height:100%;
+      margin:0px;
+      padding:0px;
+      display:flex;
+      flex-direction:column;
+      line-height:1.5;
+    }
+   .header {
+      width:100%;
+      height:130px;
+      padding-left:50px;
+    }
+    .content {
+      flex-grow:1;
+      display:flex;
+      flex-direction:row;
+    }
+    .content .menuleft{
+      padding-left:5px;
+      width:110px;
+      overflow:auto;
+    }
+    .content .menuleft h2{
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size:1.1em;
+    }
+    .content .menuleft span{
+      padding-left:10px;
+      display: block;
+    }
+    .content .menuleft span:hover{
+      text-decoration:underline;
+      cursor:pointer;
+      display:block
+    }
+    .content .mainspace{
+      flex-grow:1;
+    }
+    .content .mainspace iframe{
+      border:0px;
+      border-left:1px solid rgb(220,220,220);
+    h1 {text-align: center;}
+    p1 {text-align: center;}
+    h2 {text-align: center; background-color: rgb(255, 213, 58);
+    color: rgb(0, 42, 65);}
+    }
+  </style>
+  <script>
+    function openURL(url){
+      document.getElementById("presentation").setAttribute("src", url);
+    }
+    function followURL(url){document.location = url;}
+  </script>
+</head>
+<body>
+  <div class="header">
+    <h2>etotheipiequals? Physics</h2>
+    <p>Use full screen (click on square symbol in right-hand margin) for Caroline presentations. Hosted with GitHub Pages. Last updated 2021-11-29.  </p>
+  </div>
+  <div class="content">
+    <div class="menuleft">
+      <h2>Optics</h2>
+        <span onclick="followURL('https://etotheipiequals.github.io/Optics/index.html')">Optics f2f</span>      
+        <span onclick="openURL('https://arc-alkali-rydberg-calculator.readthedocs.io/en/latest/Rydberg_atoms_a_primer_notebook.html')">Rydberg</span>
+      <h2>Quantum</h2>
+        <span onclick="followURL('https://etotheipiequals.github.io/QIC_Caroline/index.html')">QIC</span>
+        <span onclick="openURL('./QIC_Caroline/Quantum_Semiotics_audience.html')">Semiotics</span>
+      <h2>Climate</h2>
+        <span onclick="openURL('https://etotheipiequals.github.io/Climate/Keeling_curve.html')">Keeling curve</span>
+        <span onclick="openURL('https://etotheipiequals.github.io/Climate/T_vs_emissions.html')">T vs Emissions</span>
+      <h2>Data Viz</h2>
+        <span onclick="openURL('https://etotheipiequals.github.io/Data_Viz/Energy_GDP.html')">Energy vs. GDP</span>
+        <span onclick="openURL('https://etotheipiequals.github.io/Data_Viz/Energy_GDP_Code.html')">[Code]</span>
+        <span onclick="openURL('https://etotheipiequals.github.io/Data_Viz/Life_Expectancy_GDP_linear.html')">Life Exp vs GDP</span>
+        <span onclick="openURL('https://etotheipiequals.github.io/Data_Viz/LifeExpectancy_GDP.html')">[Code]</span>
+
+    </div>
+    <div class="mainspace">
+<iframe id="presentation" width="100%" height="100%" src="https://etotheipiequals.github.io/QIC_Caroline/QIC_interactive_audience.html" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</body>
+</html>

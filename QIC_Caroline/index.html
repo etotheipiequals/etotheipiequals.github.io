@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>C. S. Adams Quantum and Optics</title>
+  <!-- This will likely appear on Google search after page is indexed  -->
+  <meta name="description" content="C. S. Adams">
+  <meta name="keywords" content="optics, quantum, climate, research, Durham university">
+  <!-- choose font on https://fonts.google.com/  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+   html{
+     height:100%;
+     overflow:hidden;
+   }
+   body{
+     font-family: 'Source Sans Pro', sans-serif;
+     min-height:100%;
+      margin:0px;
+      padding:0px;
+      display:flex;
+      flex-direction:column;
+      line-height:1.5;
+    }
+   .header {
+      width:100%;
+      height:130px;
+      padding-left:50px;
+    }
+    .content {
+      flex-grow:1;
+      display:flex;
+      flex-direction:row;
+    }
+    .content .menuleft{
+      padding-left:0px;
+      width:25px;
+      overflow:auto;
+    }
+    .content .menuleft h2{
+      font-family: 'Source Sans Pro', sans-serif;
+      font-size:1.1em;
+    }
+    .content .menuleft span{
+      text-align: center;
+      padding-left:0px;
+      display: block;
+    }
+    .content .menuleft span:hover{
+      text-decoration:underline;
+      cursor:pointer;
+      display:block
+    }
+    .content .mainspace{
+      flex-grow:1;
+    }
+    .content .mainspace iframe{
+      border:0px;
+      border-left:1px solid rgb(220,220,220);
+    }
+    h1 {text-align: center;}
+    p1 {text-align: center;}
+    h2 {text-align: center; background-color: rgb(255, 213, 58);
+    color: rgb(0, 42, 65);}
+  </style>
+  <script>
+    function openURL(url){
+      document.getElementById("presentation").setAttribute("src", url);
+    }
+    function followURL(url){document.location = url;}
+  </script>
+</head>
+<body>
+  <div class="header">
+    <h1>Durham Physics: Quantum Information and Computing (QIC)</h1>
+    <h2> Last updated 2021-11-16 </h2>
+  </div>
+  <div class="content">
+    <div class="menuleft">
+         <span onclick="followURL('https://etotheipiequals.github.io/')"> <<< </span>
+         <span onclick="openURL('./QIC_1_audience.html')">1</span>
+         <span onclick="openURL('./QIC_2_audience.html')">2</span>
+         <span onclick="openURL('./QIC_3_audience.html')">3</span>
+         <span onclick="openURL('./QIC_4_audience.html')">4</span>
+         <span onclick="openURL('./QIC_5_audience.html')">5</span>
+         <span onclick="openURL('./QIC_6_audience.html')">6</span>
+         <span onclick="openURL('./QIC_7_audience.html')">7</span>
+         <span onclick="openURL('./QIC_8_audience.html')">8</span>
+         <span onclick="openURL('./QIC_9_audience.html')">9</span>
+         <span onclick="openURL('./QIC_10_audience.html')">10</span>
+         <span onclick="openURL('./QIC_11_audience.html')">11</span>
+         <span onclick="openURL('./QIC_12_audience.html')">12</span>
+         <span onclick="openURL('./QIC_13_audience.html')">13</span>
+         <span onclick="openURL('./QIC_14_audience.html')">14</span>
+         <span onclick="openURL('./QIC_15_audience.html')">15</span>
+         <span onclick="openURL('./QIC_16_audience.html')">16</span>
+         <span onclick="openURL('./QIC_17_audience.html')">17</span>
+         <span onclick="openURL('./QIC_18_audience.html')">18</span>
+    </div>
+    <div class="mainspace">
+<iframe id="presentation" width="100%" height="100%" src="https://etotheipiequals.github.io/QIC_Caroline/QIC_1_audience.html" allowfullscreen></iframe>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset=utf-8>
+	<title>Caroline presentation</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./caroline/images/caroline.ico">
+	<link rel="apple-touch-icon" href="./caroline/images/caroline_192.png">
+	<meta name="description" content=". Presentation made with Caroline, open-source Python framework for engaging science talks.">
+	<meta name="keywords" content=", caroline" />
+	<meta name="theme-color" content="#F0F0F0" />
+	<!--<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet" async defer>-->
+	<link rel="stylesheet" type="text/css" href="./caroline/style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content="">
+	<meta property="og:title" content="Caroline presentation" />
+  <meta property="og:description" content="" />
+	<meta name="twitter:image" content="">
+	<meta name=”twitter:card” content="summary" />
+	<meta name=”twitter:site” content="" />
+	<meta name=”twitter:title” content="Caroline presentation" />
+	<meta name=”twitter:description” content="" />
+</head>
+
+<body>
+<div id="confirmd">
+	<div>
+		<h3>Please confirm</h3>
+		<h2 id="confirmmessage"></h2>
+		<input type="button" id="bno" value="Cancel"><br/>
+		<input type="button" id="byes" value="Yes, clear roundtable">
+	</div>
+</div>
+
+<div id="slidespace">
+</div>
+<div id="cursor" class="cursor">
+  <div class="cursor-icon">	<div class="cursor-name" id="cname0"></div></div>
+
+</div>
+
+<div id="controlspace">
+	<div class="control" title="Exit roundtable"></div>
+	<div class="control" title="Toggle full screen"></div>
+	<div class="control" title="Next slide"></div>
+	<div class="control" title="Previous slide"></div>
+	<div class="control" title="Use pointer"></div>
+	<div class="control" title="Use pen"></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="Reduce pen line thickness"></div>
+	<div class="control" title="Increase pen line thickness"></div>
+	 <div class="control" title="Add text or LaTeX"></div>
+	<div class="control" title="Roundtable"></div>
+	<div class="control" title="Share image, PDF, Jupyter notebook or source code"><input type="file" id="selectedimage"></div>
+	<div class="control" title="Save current view as image"></div>
+	<div class="control" title="Increase text size"></div>
+	<div class="control" title="Decrease text size"></div>
+	<div class="control" title="Remove last annotation"></div>
+	<div class="control" title="Clear surface"></div>
+	<div class="control" title="Add slide surface"></div>
+</div>
+<div id="cameraspace">
+	<div class="camera" title="Add camera in the corner"></div>
+</div>
+<div id="roundtable_participants">
+</div>
+<div id="notify">
+	<span></span>
+</div>
+<div id="carolinelogo">
+</div>
+
+
+
+	<script>
+	MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [             // start/end delimiter pairs for display math
+				['$$', '$$'],
+				['\\[', '\\]']
+			],
+			processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+			packages: {'[+]': ['bbox']}
+		},
+		svg: {
+			fontCache: 'global'
+		},
+		loader: {load: ['[tex]/bbox']}
+	};
+	</script>
+	<script id="MathJax-script" src="./caroline/js/mathjax/tex-chtml.js"></script>
+	<script src="./caroline/js/socket.io.min.js"></script>
+	<script src="./caroline/js/html2canvas.min.js"></script>
+	<script src="./caroline/js/pdf.min.js"></script>
+	<script src='./caroline/js/jspdf.umd.min.js'></script>
+	<script>
+	 var pdfjsLib = window['pdfjs-dist/build/pdf'];
+	 pdfjsLib.GlobalWorkerOptions.workerSrc = './caroline/js/pdf.worker.min.js';
+	 var { jsPDF } = window["jspdf"];
+  </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<link id="codelightcss" rel="stylesheet" href="./caroline/style/atom-one-light.min.css" defer disabled="disabled">
+	<link id="codedarkcss" rel="stylesheet" href="./caroline/style/atom-one-dark.min.css" defer>
+	<script src="./caroline/js/highlight.min.js" defer></script>
+	<script src="./caroline/js/markdown-it.min.js" defer></script>
+	<script src="./caroline/js/markdown-it-mathjax.js" defer></script>
+	<script src='./caroline/js/nbv.js' defer></script>
+	<script src="./caroline/js/roundtable_app.js"></script>
+
+  <script>
+		var roundTable = false;
+		var username = "Audience";
+		var room = null;  // roundtable room
+	 	var data = {"slides": [{"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC.6: Ph 30, 14.00 Thursday Jan 27, 2022\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e QIC.5 Summary \u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003eSingle-qubit gates (DVC2)\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eRabi oscillations\u003c/p\u003e\n\u003cp\u003e$\\rightarrow$ $\\pi/2$, $\\pi$, $2\\pi$ pulses.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_pi_over_2.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_pi_over_2.png\u0027 class=\u0027simage\u0027 style=\u0027height:150px;max-height:150px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 3 / 4; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eHadamard gate\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 3 / 4; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/BlochDM_Hxz.png\u0027 alt=\u0027image ./QIC_Figures/BlochDM_Hxz.png\u0027 class=\u0027simage\u0027 style=\u0027height:150px;max-height:150px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 3 / 4; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC5_Sr_Rabi_oscillation_1.png\u0027 alt=\u0027image ./QIC_Figures/QIC5_Sr_Rabi_oscillation_1.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eQIC.6: Outline\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003eLow Decoherence (DVC4)\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eBuild \u003cstrong\u003edecay\u003c/strong\u003e and \u003cstrong\u003edecoherence\u003c/strong\u003e into qubit model.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eT1/T2 times\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eOptical Bloch equations\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\dot{u}\u0026amp;=\u0026amp;-\\frac{u}{T_2}-\\Delta v~,\\\\\n\\dot{v}\u0026amp;=\u0026amp;\\Delta u-\\frac{v}{T_2}-\\Omega w~,\\\\\n\\dot{w}\u0026amp;=\u0026amp;\\Omega v-\\frac{1}{T_1}\\left(w-1 \\right)~.\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 2 / 3; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/BlochDM_T2.png\u0027 alt=\u0027image ./QIC_Figures/BlochDM_T2.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC6_intro.png\u0027 alt=\u0027image ./QIC_Figures/QIC6_intro.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eDecay and decoherence: $T_1$ and $T_2$\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOptical Bloch equations\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOptical Bloch equations\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOBE: analytic example\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eDecoherence\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\dot{u}\u0026amp;=\u0026amp;-\\frac{u}{T_2}-\\Delta v~,\\\\\n\\dot{v}\u0026amp;=\u0026amp;\\Delta u-\\frac{v}{T_2}-\\Omega w~,\\\\\n\\dot{w}\u0026amp;=\u0026amp;\\Omega v-\\frac{1}{T_1}\\left(w-1 \\right)~.\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003eNo driving, $\\Omega = 0$.\u003c/p\u003e\n\u003cp\u003eDetuning, $\\Delta \\neq 0$\u003c/p\u003e\n\u003cp\u003eInitial state $\\vert +\\rangle = \\textstyle{1\\over\\sqrt{2}}(\\vert 0\\rangle +\\vert 1\\rangle)$\u003c/p\u003e\n\u003cp\u003eTransition from \u003c/p\u003e\n\u003cp\u003e$T2 \u0026gt; T1$ ($T_2 = 2T_1$ decay only) \u003c/p\u003e\n\u003cp\u003eto \u003c/p\u003e\n\u003cp\u003e$T2 \\ll T1$ ($T_2 = 2T_1/21$ decohernce dominates)\u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} \n\\frac{1}{T_2} = \\frac{1}{2T_1} + \\Gamma_2\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003e\\begin{eqnarray} \n\\Gamma_2 = [0, 2.5, 5, 7.5, 10]/T_1\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./QIC_Figures/BlochDM_T2.html\u0027 title=\u0027iframe ./QIC_Figures/BlochDM_T2.html\u0027 class=\u0027sframe\u0027 style=\u0027height:800px;max-height:800px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003e$T_1$ and $T_2$ times\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003eHow to measure $T_2$?\u003c/p\u003e\n\u003cp\u003eSee QIC.7\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC6_superconducting_T1_T2.png\u0027 alt=\u0027image ./QIC_Figures/QIC6_superconducting_T1_T2.png\u0027 class=\u0027simage\u0027 style=\u0027height:400px;max-height:400px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOBE: transition to steady-state\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\dot{u}\u0026amp;=\u0026amp;-\\frac{u}{T_2}-\\Delta v~,\\\\\n\\dot{v}\u0026amp;=\u0026amp;\\Delta u-\\frac{v}{T_2}-\\Omega w~,\\\\\n\\dot{w}\u0026amp;=\u0026amp;\\Omega v-\\frac{1}{T_1}\\left(w-1 \\right)~.\n\\end{eqnarray}\u003c/p\u003e\n\u003cp\u003e$t \\gg 1/Omega,~1\\Delta$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./QIC_Figures/BlochDM6_initial_to_steady_state.html\u0027 title=\u0027iframe ./QIC_Figures/BlochDM6_initial_to_steady_state.html\u0027 class=\u0027sframe\u0027 style=\u0027height:800px;max-height:800px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOBE: transition to steady-state\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\dot{u}\u0026amp;=\u0026amp;-\\frac{u}{T_2}-\\Delta v~,\\\\\n\\dot{v}\u0026amp;=\u0026amp;\\Delta u-\\frac{v}{T_2}-\\Omega w~,\\\\\n\\dot{w}\u0026amp;=\u0026amp;\\Omega v-\\frac{1}{T_1}\\left(w-1 \\right)~.\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./QIC_Figures/QJump_interactive.html\u0027 title=\u0027iframe ./QIC_Figures/QJump_interactive.html\u0027 class=\u0027sframe\u0027 style=\u0027height:800px;max-height:800px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOBE steady state\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\dot{u}\u0026amp;=\u0026amp;-\\frac{u}{T_2}-\\Delta v~,\\\\\n\\dot{v}\u0026amp;=\u0026amp;\\Delta u-\\frac{v}{T_2}-\\Omega w~,\\\\\n\\dot{w}\u0026amp;=\u0026amp;\\Omega v-\\frac{1}{T_1}\\left(w-1 \\right)~.\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QJump.png\u0027 alt=\u0027image ./QIC_Figures/QJump.png\u0027 class=\u0027simage\u0027 style=\u0027height:400px;max-height:400px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOBE steady-state\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:0.50em\u0027\u003e\u003cp\u003e\\begin{eqnarray} \n\\dot{u}\u0026amp;=\u0026amp;-\\frac{u}{T_2}-\\Delta v~,\\\\\n\\dot{v}\u0026amp;=\u0026amp;\\Delta u-\\frac{v}{T_2}-\\Omega w~,\\\\\n\\dot{w}\u0026amp;=\u0026amp;\\Omega v-\\frac{1}{T_1}\\left(w-1 \\right)~.\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/rabi_ss_1.png\u0027 alt=\u0027image ./QIC_Figures/rabi_ss_1.png\u0027 class=\u0027simage\u0027 style=\u0027height:400px;max-height:400px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOBE steady-state\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/rabi_ss_1.png\u0027 alt=\u0027image ./QIC_Figures/rabi_ss_1.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC.6 Summary\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e QIC.6 Notes \u003c/strong\u003e \u003c/p\u003e\n\u003cp\u003eSummary \u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eIdentify the terms in the optical Bloch equations.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eExplain, the distinction between $T_1$ and $T_2$.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eSketch and describe the dynamics of the Bloch vector in the case of decay or decoherence. \u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eExplain whether the steady-state predicted by the optical Bloch equations is Markovian or non-Markovian. \u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}]};
+		var logoURL = "././presentation_files/Durham_University_Logo.png";
+		var leftHanded = true;
+		var drawingHelp = "lines";//"lines" or "dots";
+	  var drawingHelpIntensity = 0.04;
+	  var roundTableCallBack = null;
+		var roundTableServer = "";
+		var roundTableAuth = "";
+		var roundTableExit = null;
+		var presentationServer = "";
+		var presenter = false;
+	 	window.onload = initApp();
+ 	</script>
+
+</body>
