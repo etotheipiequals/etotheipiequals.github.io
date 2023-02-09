@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset=utf-8>
+	<title>Caroline presentation</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./caroline/images/caroline.ico">
+	<link rel="apple-touch-icon" href="./caroline/images/caroline_192.png">
+	<meta name="description" content=". Presentation made with Caroline, open-source Python framework for engaging science talks.">
+	<meta name="keywords" content=", caroline" />
+	<meta name="theme-color" content="#F0F0F0" />
+	<!--<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet" async defer>-->
+	<link rel="stylesheet" type="text/css" href="./caroline/style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content="">
+	<meta property="og:title" content="Caroline presentation" />
+  <meta property="og:description" content="" />
+	<meta name="twitter:image" content="">
+	<meta name=”twitter:card” content="summary" />
+	<meta name=”twitter:site” content="" />
+	<meta name=”twitter:title” content="Caroline presentation" />
+	<meta name=”twitter:description” content="" />
+</head>
+
+<body>
+<div id="confirmd">
+	<div>
+		<h3>Please confirm</h3>
+		<h2 id="confirmmessage"></h2>
+		<input type="button" id="bno" value="Cancel"><br/>
+		<input type="button" id="byes" value="Yes, clear roundtable">
+	</div>
+</div>
+
+<div id="slidespace">
+</div>
+<div id="cursor" class="cursor">
+  <div class="cursor-icon">	<div class="cursor-name" id="cname0"></div></div>
+
+</div>
+
+<div id="controlspace">
+	<div class="control" title="Exit roundtable"></div>
+	<div class="control" title="Toggle full screen"></div>
+	<div class="control" title="Next slide"></div>
+	<div class="control" title="Previous slide"></div>
+	<div class="control" title="Use pointer"></div>
+	<div class="control" title="Use pen"></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="Reduce pen line thickness"></div>
+	<div class="control" title="Increase pen line thickness"></div>
+	 <div class="control" title="Add text or LaTeX"></div>
+	<div class="control" title="Roundtable"></div>
+	<div class="control" title="Share image, PDF, Jupyter notebook or source code"><input type="file" id="selectedimage"></div>
+	<div class="control" title="Save current view as image"></div>
+	<div class="control" title="Increase text size"></div>
+	<div class="control" title="Decrease text size"></div>
+	<div class="control" title="Remove last annotation"></div>
+	<div class="control" title="Clear surface"></div>
+	<div class="control" title="Add slide surface"></div>
+</div>
+<div id="cameraspace">
+	<div class="camera" title="Add camera in the corner"></div>
+</div>
+<div id="roundtable_participants">
+</div>
+<div id="notify">
+	<span></span>
+</div>
+<div id="carolinelogo">
+</div>
+
+
+
+	<script>
+	MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [             // start/end delimiter pairs for display math
+				['$$', '$$'],
+				['\\[', '\\]']
+			],
+			processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+			packages: {'[+]': ['bbox']}
+		},
+		svg: {
+			fontCache: 'global'
+		},
+		loader: {load: ['[tex]/bbox']}
+	};
+	</script>
+	<script id="MathJax-script" src="./caroline/js/mathjax/tex-chtml.js"></script>
+	<script src="./caroline/js/socket.io.min.js"></script>
+	<script src="./caroline/js/html2canvas.min.js"></script>
+	<script src="./caroline/js/pdf.min.js"></script>
+	<script src='./caroline/js/jspdf.umd.min.js'></script>
+	<script>
+	 var pdfjsLib = window['pdfjs-dist/build/pdf'];
+	 pdfjsLib.GlobalWorkerOptions.workerSrc = './caroline/js/pdf.worker.min.js';
+	 var { jsPDF } = window["jspdf"];
+  </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<link id="codelightcss" rel="stylesheet" href="./caroline/style/atom-one-light.min.css" defer disabled="disabled">
+	<link id="codedarkcss" rel="stylesheet" href="./caroline/style/atom-one-dark.min.css" defer>
+	<script src="./caroline/js/highlight.min.js" defer></script>
+	<script src="./caroline/js/markdown-it.min.js" defer></script>
+	<script src="./caroline/js/markdown-it-mathjax.js" defer></script>
+	<script src='./caroline/js/nbv.js' defer></script>
+	<script src="./caroline/js/roundtable_app.js"></script>
+
+  <script>
+		var roundTable = false;
+		var username = "Lecturer";
+		var room = null;  // roundtable room
+	 	var data = {"slides": [{"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC.8: Two-qubits: Bell states and entanglement\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e QIC.7 Summary \u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003eQuantum interference\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eRamsey interferometer.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eLike optical, but in Hilbert space\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 3 / 4; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 3 / 4; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/Ramsey_static.png\u0027 alt=\u0027image ./Figures/Ramsey_static.png\u0027 class=\u0027simage\u0027 style=\u0027height:300px;max-height:300px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e\u003cstrong\u003eQIC.8: Two qubits\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 33.33%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003eOutline\u003c/strong\u003e\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 1 / 2; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eTwo-qubit operators\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eEngtanglement: Bell states\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eTwo-qubit operators\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eBreakdown of Bloch sphere picture\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 2 / 3; grid-row: 2 / 3; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/Bell_irrotational.JPG\u0027 alt=\u0027image ./Figures/Bell_irrotational.JPG\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eTwo changes everything - quantum entanglement!\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e Richard Feynman \u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e\u003cem\u003eProbability and uncertainty - the quantum mechanical view of nature\u003c/em\u003e, \u003c/p\u003e\n\u003cp\u003eMessenger Letures, Cornell, November 18\u003csup\u003eth\u003c/sup\u003e, 1964.\u003c/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cem\u003eI think I can safely say that nobody understands quantum mechanics\u003c/em\u003e\u003c/p\u003e\n\u003c/blockquote\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027https://www.youtube.com/embed/41Jc75tQcB0?start=476\u0026end=481\u0027 title=\u0027iframe https://www.youtube.com/embed/41Jc75tQcB0?start=476\u0026end=481\u0027 class=\u0027sframe\u0027 style=\u0027height:315px;max-height:315px;\u0027 allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eWhat Richard Feynman said!\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e... you\u0027ll get down a drain,\u003c/p\u003e\n\u003cp\u003e... nobody has yet escaped,\u003c/p\u003e\n\u003cp\u003e... nobody knows how it can be like that.\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027https://www.youtube.com/embed/41Jc75tQcB0?start=509\u0026end=521\u0027 title=\u0027iframe https://www.youtube.com/embed/41Jc75tQcB0?start=509\u0026end=521\u0027 class=\u0027sframe\u0027 style=\u0027height:315px;max-height:315px;\u0027 allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen\u003e\u003c/iframe\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eI have spent 30 years down that drain!\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eTwo-qubit states\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eA and B\u003c/p\u003e\n\u003cp\u003e$\n\\vert\\Psi\\rangle \n =  a_{00}\\vert 00 \\rangle + a_{01}\\vert 01 \\rangle + a_{10}\\vert 10 \\rangle + a_{11}\\vert 11 \\rangle$\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eTwo-qubit states\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\\begin{eqnarray}\n\\vert\\Psi\\rangle \n =  a_{00}\\vert 00 \\rangle + a_{01}\\vert 01 \\rangle + a_{10}\\vert 10 \\rangle + a_{11}\\vert 11 \\rangle\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eReduced density matrix for A\n\\begin{eqnarray}\n\\rho_{\\rm A} = {\\rm Tr}_{\\rm B}\n\\left( \n\\rho\n\\right)  \\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 3 / 4; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC8_Bell_reduced.png\u0027 alt=\u0027image ./QIC_Figures/QIC8_Bell_reduced.png\u0027 class=\u0027simage\u0027 style=\u0027height:100px;max-height:100px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 2 / 3; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\\begin{eqnarray}\n\\left( \n\\begin{array}{cc} \na  + f \u0026amp; c + h  \\\\\\\ni  + n \u0026amp; k + p\u003cbr /\u003e\n\\end{array} \n\\right)\n=\n {\\rm Tr}_{\\rm B}\n\\left( \n\\begin{array}{cccc} \na  \u0026amp; b \u0026amp; c \u0026amp; d  \\\\\\\ne  \u0026amp; f \u0026amp; g \u0026amp; h  \\\\\\\ni  \u0026amp; j \u0026amp; k \u0026amp; l  \\\\\\\nm  \u0026amp; n \u0026amp; o \u0026amp; p \n\\end{array} \n\\right)\u003cbr /\u003e\n\\end{eqnarray}\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eTwo-qubit states\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e Bell states \u003c/strong\u003e \u003c/p\u003e\n\u003cp\u003e$\n\\vert\\Phi^{\\pm}\\rangle \n =  \\textstyle{1\\over \\sqrt{2}}(\\vert 00 \\rangle \\pm \\vert 11 \\rangle)$\u003c/p\u003e\n\u003cp\u003e$\\vert\\Psi^{\\pm}\\rangle \n =  \\textstyle{1\\over \\sqrt{2}}(\\vert 01 \\rangle \\pm \\vert 10 \\rangle)$\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/Bell.jpg\u0027 alt=\u0027image ./Figures/Bell.jpg\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eTwo-qubit operators\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 3 / 4; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cdiv class=\u0027span\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eApply an ${\\sf R}_y$ rotation to both qubits.\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:0.50em\u0027\u003e\u003cimg src=\u0027./Figures/Bloch_Ry.png\u0027 alt=\u0027image ./Figures/Bloch_Ry.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003cp\u003e\u003cstrong\u003eFigure\u003c/strong\u003e:  Bloch sphere $\\times 2$?\u003c/p\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eBloch sphere?\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eExcellent to understand single-qubit gates\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eDecay and decoherene of single qubit\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eBut does not work for more than one qubit.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eFortunately, the density matrix is extendable to any number of qubits.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/BlochSphere_Bad.JPG\u0027 alt=\u0027image ./Figures/BlochSphere_Bad.JPG\u0027 class=\u0027simage\u0027 style=\u0027height:300px;max-height:300px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eIrrotationality of the Bell state\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/Bell_Ry_dots.html\u0027 title=\u0027iframe ./Figures/Bell_Ry_dots.html\u0027 class=\u0027sframe\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eIrrotationality of Bell states\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e${\\small \\vert 00\\rangle,~ \n\\frac{1}{\\sqrt{3}}(\\sqrt{2}\\vert 00\\rangle + \\vert 11\\rangle),~ \n\\bbox[5px, border: 2px solid red]{\\frac{1}{\\sqrt{2}}(\\vert 00\\rangle + \\vert 11\\rangle)},~ \n\\frac{1}{\\sqrt{3}}(\\vert 00\\rangle + \\sqrt{2}\\vert 11\\rangle),~ \n\\vert 11\\rangle}$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/Bell_irrotational.JPG\u0027 alt=\u0027image ./Figures/Bell_irrotational.JPG\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eBell states are useful!\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027gridslide\u0027 style=\u0027grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(4, 25.00%)\u0027\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 1 / 2; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC8_crypto_1.png\u0027 alt=\u0027image ./QIC_Figures/QIC8_crypto_1.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003cdiv style=\u0027padding:0.3em;grid-column: 4 / 5; grid-row: 3 / 4; font-size:1.00em\u0027\u003e\u003cimg src=\u0027./QIC_Figures/QIC8_crypto_2.png\u0027 alt=\u0027image ./QIC_Figures/QIC8_crypto_2.png\u0027 class=\u0027simage\u0027 style=\u0027height:200px;max-height:200px;\u0027\u003e\u003c/div\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e${\\sf R}_x$ Rotationality of the Bell state\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e$\n\\vert\\Phi^+\\rangle \n =  \\textstyle{1\\over \\sqrt{2}}(\\vert 00 \\rangle + \\vert 11 \\rangle)$\u003c/p\u003e\n\u003cp\u003e$\\rightarrow$\u003c/p\u003e\n\u003cp\u003e$\\vert\\Psi^+\\rangle \n =  -\\textstyle{{\\rm i}\\over \\sqrt{2}}(\\vert 01 \\rangle + \\vert 10 \\rangle)$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/Bell_Rx_dots.html\u0027 title=\u0027iframe ./Figures/Bell_Rx_dots.html\u0027 class=\u0027sframe\u0027 style=\u0027height:600px;max-height:600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC.8 Summary\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e\u003cstrong\u003e QIC.8 Notes \u003c/strong\u003e \u003c/p\u003e\n\u003cp\u003eSummary \u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eExplain the principle of entanglement and identify entangled states.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eConstruct two-qubit operators.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eAnalyse the properties of Bell states.\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eExplain, why the Bloch sphere representation does not work for entangled states, and demonstrate examples such the directionless charactor of the Bloch vector and the irrotationality of Bell state.\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}]};
+		var logoURL = "././presentation_files/Durham_University_Logo.png";
+		var leftHanded = true;
+		var drawingHelp = "lines";//"lines" or "dots";
+	  var drawingHelpIntensity = 0.04;
+	  var roundTableCallBack = null;
+		var roundTableServer = "https://roundtable.researchx3d.com";
+		var roundTableAuth = "osagASfew8t31qNqfHQ3Gq";
+		var roundTableExit = null;
+		var presentationServer = "https://etotheipiequals.github.io/QIC_Caroline/QIC_8_audience.html";
+		var presenter = true;
+	 	window.onload = initApp();
+ 	</script>
+
+</body>
