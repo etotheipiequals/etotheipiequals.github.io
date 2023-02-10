@@ -6,7 +6,7 @@ p = Presentation(
     drawingHelp="lines",
     drawingHelpIntensity=0.04,
     roundTableServer="https://roundtable.researchx3d.com",
-    presentationServer="https://etotheipiequals.github.io/QIC_Quiz_2023_audience.html",
+    presentationServer="https://etotheipiequals.github.io/QIC_2023_Quiz_audience.html",
     authenticationToken="osagASfew8t31qNqfHQ3Gq",
 )
 
