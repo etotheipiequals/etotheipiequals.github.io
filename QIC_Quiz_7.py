@@ -179,7 +179,7 @@ p.save("./QIC_Quiz_7.html")
 
 p.newQuiz(# (b) and (d)
     questionImage="./Figures/Bell.jpg",
-    questionText=r"Photon pairs are prepared in the Bell state, \begin{eqnarray}\vert \Phi^+ \rangle & = &\frac{1}{\sqrt{2}}\left(\vert {\sf HH} \rangle+\vert {\sf VV} \rangle\right)\end{eqnarray} ",
+    questionText=r"Photon pairs are prepared in the Bell state, \begin{eqnarray}\vert \Phi^+ \rangle & = &\frac{1}{\sqrt{2}}\left(\vert {\sf HH} \rangle+\vert {\sf VV} \rangle\right)\end{eqnarray}. Which of the following are {\bf TRUE}? ",
     answersText=[
         r"$({\rm a})$ If Alice and Bob both measure in the same basis they sometimes get the same result.",
         r"$({\rm b})$ If Alice and Bob both measure in the same basis they always get the same result.",

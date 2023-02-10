@@ -167,7 +167,7 @@ p.newQuiz(# (e)
 ############# QUIZ  ##############
 ########################################
 
-p.newQuiz(#(c)
+p.newQuiz(#(b)
 #    questionImage="./QIC_Figures/QIC3_vonNeumann.png",
     questionText=r"$5.$ The density matrix, $\rho$ with element $\rho_{ij}$, for a qubit is \begin{eqnarray}\rho & = &\frac{1}{2} \left(\begin{array}{cc} 1+w & u-{\rm i}v \\\ u+{\rm i}v & 1-w \end{array}\right)~,\end{eqnarray} where $(u,v,w)$ are the cartesian components of the Bloch vector. Which of the following are false? [1 mark]""", fontSize=1.0,
     answersText=[

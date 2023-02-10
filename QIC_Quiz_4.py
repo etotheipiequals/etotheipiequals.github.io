@@ -182,7 +182,7 @@ p.newQuiz(#(c)
 ############# QUIZ  ##############
 ########################################
 
-p.newQuiz(#(c)
+p.newQuiz(#(a)
     questionImage="./QIC_Figures/R_pi3.png",
     questionText=r"$6.$ For the rotation shown (from red dot to red dot), what is the rotation angle, $\Theta$? [1 mark]""", fontSize=0.8,
     answersText=[

@@ -7,7 +7,7 @@ p = Presentation(
     drawingHelp="lines",
     drawingHelpIntensity=0.04,
     roundTableServer="https://roundtable.researchx3d.com",
-    presentationServer="https://etotheipiequals.github.io/QIC_Caroline/QIC_10_audience.html",
+    presentationServer="https://etotheipiequals.github.io/QIC_10_audience.html",
     authenticationToken="osagASfew8t31qNqfHQ3Gq",
 )
 
@@ -73,6 +73,16 @@ p.newSlide()
 p.title("**Decoherence due to interaction with the environment**")
 
 
+
+p.makeGrid(4,4)
+p.gridImage(0,3,"./QIC_Figures/QIC10_decoherence_circuit_1.png", height = 100)
+
+
+########################################
+p.newSlide()
+p.title("**Decoherence due to interaction with the environment**")
+
+
 p.spanCenterIFrame("./QIC_Videos/QIC_10_p1.mp4", height= 1600)
 
 #p.rightImage("./QIC_Figures/QIC10_decoherence_circuit_1.png", height = 100)
@@ -82,6 +92,16 @@ p.spanCenterIFrame("./QIC_Videos/QIC_10_p1.mp4", height= 1600)
 #p.gridImage(0,3,"./QIC_Figures/QIC10_decoherence_circuit_1.png", height = 100)
 
 
+########################################
+p.newSlide()
+p.title("**Decoherence due to interaction with the environment**")
+
+
+
+p.makeGrid(4,4)
+p.gridImage(0,3,"./QIC_Figures/QIC10_decoherence_circuit_1.png", height = 100)
+
+
 
 ########################################
 p.newSlide()
@@ -89,6 +109,15 @@ p.title("**Decoherence due to interaction with the environment**")
 
 
 p.spanCenterIFrame("./QIC_Videos/QIC_10_p2.mp4", height= 1400)
+
+
+########################################
+p.newSlide()
+p.title("**Decoherence due to interaction with the environment**")
+
+p.makeGrid(4,4)
+p.gridImage(2,3,"./QIC_Figures/QIC10_decoherence_circuit_2.png", height = 100)
+
 
 
 ########################################
@@ -203,6 +232,17 @@ Idea.
 
 """, fontSize = 0.5)
 p.gridImage(1,3,"./QIC_Figures/QIC10_delayed_choice_quantum_eraser_circuit.png", height = 100)
+
+########################################
+p.newSlide()
+p.title("**Delayed-choice quantum eraser**")
+
+p.makeGrid(4,4)
+
+p.gridImage(0,3,"./QIC_Figures/QIC10_delayed_choice_quantum_eraser_circuit.png", height = 100)
+
+
+
 
 ########################################
 p.newSlide()
