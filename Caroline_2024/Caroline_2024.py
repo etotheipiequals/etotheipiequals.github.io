@@ -6,8 +6,9 @@ p = Presentation(
     drawingHelp="lines",
     drawingHelpIntensity=0.04,
     roundTableServer="https://roundtable.researchx3d.com",
-    presentationServer="http://localhost:8000/Caroline_2024_audience.html",
- #   presentationServer="https://etotheipiequals.github.io/Caroline_2024/Caroline_2024_audience.html",
+#    presentationServer="http://localhost:8000/Caroline_2024_audience.html",
+    presentationServer="https://etotheipiequals.github.io/Caroline_2024/Caroline_2024_audience.html",
+    presentationSemaphore=True,  # allows audience to always feed back to lecturer on the speed of the lecture
     authenticationToken="osagASfew8t31qNqfHQ3Gq",
 )
 
@@ -29,8 +30,93 @@ p.leftImage("./presentation_files/Caroline_Herschel.jpeg", height = 400, textBel
 p.rightText(r"""
 **Link**: > pip install Caroline-presentation
 
-          https://github.com/nikolasibalic/Caroline""",fontSize=0.75)
+          https://github.com/nikolasibalic/Caroline
+          
+          * Python + HTML
+          
+          """,fontSize=0.75)
 
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Interactivity!")
+
+
+p.spanCenterIFrame("./Figures/Jinc2Col.html", height=600)
+
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newQuiz( # (c)
+    questionImage="./Figures/fourier.png",
+    questionText="##Which of the following is the Fourier transform of M?",
+    answersImage=[
+        "./Figures/Z.png",
+        "./Figures/A.png",
+        "./Figures/M.png",
+        "./Figures/N.png",
+        "./Figures/W.png",
+        "./Figures/X.png",
+    ],
+)
+
+########################################
+#############  New slide  ##############
+########################################
+
+
+p.newQuiz(#(a)
+    questionText="#If a collimated laser beam is incident on a lens, the beam waist of the focal beam is",
+    answersText=[r"$({\rm a})$ Before (upstream of) the focal plane.",
+                 r"$({\rm b})$ In the focal plane.",
+                 r"$({\rm c})$ Beyond (downstream of) the focal plane."]
+)
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Interactivity!")
+
+
+p.spanCenterIFrame("./Figures/LensInteractive.html", height=600)
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+
+p.newQuiz(#(a)
+    questionText="#If a collimated laser beam is incident on a lens, the beam waist of the focal beam is",
+    answersText=[r"$({\rm a})$ Before (upstream of) the focal plane.",
+                 r"$({\rm b})$ In the focal plane.",
+                 r"$({\rm c})$ Beyond (downstream of) the focal plane."]
+)
+
+
+
+
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Open interactive web pages")
+
+p.spanCenterIFrame("https://climatemodels.uchicago.edu/modtran/", height = 600) 
+
+
+#p.rightIFrame("https://climatemodels.uchicago.edu/modtran/", height = 300) 
 
 '''
 
@@ -41,8 +127,10 @@ p.rightText(r"""
 p.newSlide()
 p.title("Open interactive web pages")
 
-p.leftIFrame("https://shilingliang.com/web-simulator-by-GPT4/interactive_vicsek.html", height = 300) 
-p.rightIFrame("https://climatemodels.uchicago.edu/modtran/", height = 300) 
+p.spanCenterIFrame("https://shilingliang.com/web-simulator-by-GPT4/interactive_vicsek.html", height = 300) 
+
+
+#p.rightIFrame("https://climatemodels.uchicago.edu/modtran/", height = 300) 
 
 
 ########################################
