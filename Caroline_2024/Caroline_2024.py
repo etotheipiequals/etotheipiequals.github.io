@@ -163,50 +163,7 @@ p.gridImage(2,3,"./Figures/Rydberg.png", height = 100,
 
 p.rightImage("./Figures/SlideExample2.png", height=600)
 
-########################################
-#############  New slide  ##############
-########################################
 
-p.newSlide()
-
-p.title("QLM Xmas Quiz?")
-
-p.makeGrid(3,3)
-
-p.gridImage(0,1,"./Figures/dark_side.png", height = 400) 
-
-p.gridIFrame(2,1,"./Figures/time.mp3")
-
-
-
-########################################
-#############  New slide  ##############
-########################################
-
-p.newQuiz( # (c)
-#    questionImage="./Figures/fourier.png",
-    questionText="Which of the following is NOT a liquid at room temperature?",
-    answersImage=[
-        "./Figures/MILK.png",
-        "./Figures/BEER.png",
-        "./Figures/WINE.png",
-        "./Figures/IRON.png",
-    ],
-)
-
-
-p.newQuiz( # (c) (d) and (e)
-    questionImage="./Figures/BlochSphere1.jpg",
-    questionText=r"##In the Bloch sphere representation, which of the following state vectors lie in the $yz$ plane?",
-    answersText=[
-        r"$({\rm a})$ \begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} 0  \\\ 1 \end{array}\right)\end{eqnarray}",
-        r"$({\rm b})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} -{\rm i}  \\\ {\rm i} \end{array}\right)\end{eqnarray}",
-        r"$({\rm c})$ \begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} \cos\textstyle{\theta\over 2}  \\\ {\rm e}^{{\rm i}\pi/2}\sin\textstyle{\theta\over 2} \end{array}\right)\end{eqnarray}",
-        r"$({\rm d})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}} \left(\begin{array}{c} -{\rm i}  \\\ 1 \end{array}\right)\end{eqnarray}",
-        r"$({\rm e})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{-{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
-        r"$({\rm f})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
-     ],
-)
 
 ########################################
 ############# NEW slide ##############
@@ -309,15 +266,39 @@ p.gridIFrame(1,0, "https://ourworldindata.org/grapher/oil-production-by-country?
 
 p.gridIFrame(1,1, "https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage?country=~OWID_WRL", height=450)
 
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Two cameras (e.g. expt demo) $+$ annotations!")
+# p.spanMyCamera(height=900)
+p.leftMyCamera(height=500)
+p.rightMyCamera(height=500)
 
 
-
+'''
 #######################################
 #############  New slide  ##############
 ########################################
 
 p.newSlide()
 p.title("Annotations/Text")
+'''
+
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("**Decoherence due to interaction with the environment**")
+
+p.spanCenterIFrame("./Figures/QIC_10_p1.mp4", height= 1600)
+
+
+
 
 
 #######################################
@@ -331,39 +312,42 @@ p.spanCenterImage("./Figures/roundtable.jpg", height=600)
 
 
 
+
+
+
 ########################################
 #############  New slide  ##############
 ########################################
 
-p.newSlide()
-p.title("Demonstration (e.g. experiment demo) with two different cameras")
-# p.spanMyCamera(height=900)
-p.leftMyCamera(height=500)
-p.rightMyCamera(height=500)
+p.newQuiz( # (c)
+#    questionImage="./Figures/fourier.png",
+    questionText="Which of the following is NOT a liquid at room temperature?",
+    answersImage=[
+        "./Figures/MILK.png",
+        "./Figures/BEER.png",
+        "./Figures/WINE.png",
+        "./Figures/IRON.png",
+    ],
+)
 
 
-'''
 ########################################
 #############  New slide  ##############
 ########################################
 
-p.newSlide()
-p.title("Interactivity!")
 
-p.leftText(r"""
-
-* Explore multi-parameter space in real time
-
-* This example: Tranverse coherence length
-
-* Adding different wavelengths.   
-          
-          """,fontSize=0.75)
-
-
-p.rightIFrame("./Figures/Jinc2Col.html", height=1200)
-'''
-
+p.newQuiz( # (c) (d) and (e)
+    questionImage="./Figures/BlochSphere1.jpg",
+    questionText=r"##In the Bloch sphere representation, which of the following state vectors lie in the $yz$ plane?",
+    answersText=[
+        r"$({\rm a})$ \begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} 0  \\\ 1 \end{array}\right)\end{eqnarray}",
+        r"$({\rm b})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} -{\rm i}  \\\ {\rm i} \end{array}\right)\end{eqnarray}",
+        r"$({\rm c})$ \begin{eqnarray}\vert \psi \rangle & = &\left(\begin{array}{c} \cos\textstyle{\theta\over 2}  \\\ {\rm e}^{{\rm i}\pi/2}\sin\textstyle{\theta\over 2} \end{array}\right)\end{eqnarray}",
+        r"$({\rm d})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}} \left(\begin{array}{c} -{\rm i}  \\\ 1 \end{array}\right)\end{eqnarray}",
+        r"$({\rm e})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{-{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
+        r"$({\rm f})$ \begin{eqnarray}\vert \psi \rangle & = &\textstyle{1\over\sqrt{2}}\left(\begin{array}{c} {\rm e}^{{\rm i}\pi/8}  \\\ {\rm e}^{{\rm i}3\pi/8} \end{array}\right)\end{eqnarray}",
+     ],
+)
 
 ########################################
 #############  New slide  ##############
@@ -382,8 +366,6 @@ p.leftText(r"""
           """,fontSize=0.75)
 
 p.rightIFrame("./Figures/Jinc2Col.html", height=1200)
-
-
 
 
 ########################################
@@ -421,6 +403,58 @@ p.newQuiz(#(a)
                  r"$({\rm c})$ ...downstream of the focal plane."]
 )
 
+
+########################################
+#############  New slide  ##############
+########################################
+
+
+p.newQuiz( # (c)
+    questionImage="./Figures/fourier.png",
+    questionText="**Question** Which of the following is the Fourier transform of M?",
+    answersImage=[
+        "./Figures/Z.png",
+        "./Figures/A.png",
+        "./Figures/M.png",
+        "./Figures/N.png",
+        "./Figures/W.png",
+        "./Figures/X.png",
+    ],
+)
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+p.title("Interactivity!")
+
+
+p.spanCenterIFrame("./Figures/DSlitAngles.html", height=1200)
+
+
+########################################
+#############  New slide  ##############
+########################################
+
+
+p.newQuiz( # (c)
+    questionImage="./Figures/fourier.png",
+    questionText="**Question again!** Which of the following is the Fourier transform of M?",
+    answersImage=[
+        "./Figures/Z.png",
+        "./Figures/A.png",
+        "./Figures/M.png",
+        "./Figures/N.png",
+        "./Figures/W.png",
+        "./Figures/X.png",
+    ],
+)
+
+
+
+
 ########################################
 #############  New slide  ##############
 ########################################
@@ -447,12 +481,31 @@ p.gridIFrame(0,1,"./Figures/timeline_qo.html",height=600)
 
 p.gridIFrame(1,1, "https://ourworldindata.org/grapher/oil-production-by-country?time=1946..latest&country=NOR~USA~GBR~Russian+Federation+%26+USSR~SAU~", height=450)
 
+p.save("./Caroline_2024.html")
+
+
 
 ########################################
-############# QUIZ  ##############
+############# EXTRAS ##############
 ########################################
 
 '''
+
+########################################
+#############  New slide  ##############
+########################################
+
+p.newSlide()
+
+p.title("QLM Xmas Quiz?")
+
+p.makeGrid(3,3)
+
+p.gridImage(0,1,"./Figures/dark_side.png", height = 400) 
+
+p.gridIFrame(2,1,"./Figures/time.mp3")
+
+
 
 p.newQuiz(#(d)
     questionImage="",
@@ -557,29 +610,5 @@ p.newQuiz(
      ],
 )
 
-
-########################################
-#############  New slide  ##############
-########################################
-
-p.newSlide()
-
-p.title("What Richard Feynman said!")
-
-p.leftText(r"""
-... you'll get down a drain,
-
-... nobody has yet escaped,
-
-... nobody knows how it can be like that.
-           
-           """)
-p.rightIFrame("https://www.youtube.com/embed/41Jc75tQcB0?start=509&end=521", height=315)
-
-
 '''
-p.save("./Caroline_2024.html")
-
-
-
 
