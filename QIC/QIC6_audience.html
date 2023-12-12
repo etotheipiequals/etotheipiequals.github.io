@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+	<meta charset=utf-8>
+	<title>Caroline presentation</title>
+	<link rel="shortcut icon" type="image/x-icon" href="./caroline/images/caroline.ico">
+	<link rel="apple-touch-icon" href="./caroline/images/caroline_192.png">
+	<meta name="description" content=". Presentation made with Caroline, open-source Python framework for engaging science talks.">
+	<meta name="keywords" content=", caroline" />
+	<meta name="theme-color" content="#F0F0F0" />
+	<!--<link href="https://fonts.googleapis.com/css?family=Quicksand:400,500&display=swap" rel="stylesheet" async defer>-->
+	<link rel="stylesheet" type="text/css" href="./caroline/style/style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta property="og:url" content=""/>
+	<meta property="og:image" content="">
+	<meta property="og:title" content="Caroline presentation" />
+  <meta property="og:description" content="" />
+	<meta name="twitter:image" content="">
+	<meta name=”twitter:card” content="summary" />
+	<meta name=”twitter:site” content="" />
+	<meta name=”twitter:title” content="Caroline presentation" />
+	<meta name=”twitter:description” content="" />
+</head>
+
+<body>
+<div id="confirmd">
+	<div>
+		<h3>Please confirm</h3>
+		<h2 id="confirmmessage"></h2>
+		<input type="button" id="bno" value="Cancel"><br/>
+		<input type="button" id="byes" value="Yes, clear roundtable">
+	</div>
+</div>
+
+<div id="slidespace">
+</div>
+<div id="cursor" class="cursor">
+  <div class="cursor-icon">	<div class="cursor-name" id="cname0"></div></div>
+
+</div>
+
+<div id="controlspace">
+	<div class="control" title="Exit roundtable"></div>
+	<div class="control" title="Toggle full screen"></div>
+	<div class="control" title="Next slide"></div>
+	<div class="control" title="Previous slide"></div>
+	<div class="control" title="Use pointer"></div>
+	<div class="control" title="Use pen"></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="color selection"><div class='colors'></div></div>
+	<div class="control" title="Reduce pen line thickness"></div>
+	<div class="control" title="Increase pen line thickness"></div>
+	 <div class="control" title="Add text or LaTeX"></div>
+	<div class="control" title="Roundtable"></div>
+	<div class="control" title="Share image, PDF, Jupyter notebook or source code"><input type="file" id="selectedimage"></div>
+	<div class="control" title="Save current view as image"></div>
+	<div class="control" title="Increase text size"></div>
+	<div class="control" title="Decrease text size"></div>
+	<div class="control" title="Remove last annotation"></div>
+	<div class="control" title="Clear surface"></div>
+	<div class="control" title="Add slide surface"></div>
+</div>
+<div id="semaphore"></div>
+<div id="cameraspace">
+	<div class="camera" title="Add camera in the corner"></div>
+</div>
+<div id="roundtable_participants">
+</div>
+<div id="notify">
+	<span></span>
+</div>
+<div id="carolinelogo">
+</div>
+
+
+
+	<script>
+	MathJax = {
+		tex: {
+			inlineMath: [['$', '$'], ['\\(', '\\)']],
+			displayMath: [             // start/end delimiter pairs for display math
+				['$$', '$$'],
+				['\\[', '\\]']
+			],
+			processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+			packages: {'[+]': ['bbox']}
+		},
+		svg: {
+			fontCache: 'global'
+		},
+		loader: {load: ['[tex]/bbox']}
+	};
+	</script>
+	<script id="MathJax-script" src="./caroline/js/mathjax/tex-chtml.js"></script>
+	<script src="./caroline/js/socket.io.min.js"></script>
+	<script src="./caroline/js/html2canvas.min.js"></script>
+	<script src="./caroline/js/pdf.min.js"></script>
+	<script src='./caroline/js/jspdf.umd.min.js'></script>
+	<script>
+	 var pdfjsLib = window['pdfjs-dist/build/pdf'];
+	 pdfjsLib.GlobalWorkerOptions.workerSrc = './caroline/js/pdf.worker.min.js';
+	 var { jsPDF } = window["jspdf"];
+  </script>
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	<link id="codelightcss" rel="stylesheet" href="./caroline/style/atom-one-light.min.css" defer disabled="disabled">
+	<link id="codedarkcss" rel="stylesheet" href="./caroline/style/atom-one-dark.min.css" defer>
+	<script src="./caroline/js/highlight.min.js" defer></script>
+	<script src="./caroline/js/markdown-it.min.js" defer></script>
+	<script src="./caroline/js/markdown-it-mathjax.js" defer></script>
+	<script src='./caroline/js/nbv.js' defer></script>
+	<script src="./caroline/js/roundtable_app.js"></script>
+
+  <script>
+		var roundTable = false;
+		var username = "Audience";
+		var room = null;  // roundtable room
+	 	var data = {"slides": [{"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC6: Deoherence: the real world is not perfect\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC5 Summary\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ch2\u003e\u003cstrong\u003eRabi solution, $\\pi/2$ pulses, Hadamards, etc\u003c/strong\u003e\u003c/h2\u003e\n\u003ch3\u003e\u003cstrong\u003eRabi oscillations for resonant driving, $\\Delta = 0$\u003c/strong\u003e\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eInitial state $\\vert 0\\rangle$, $~~~P_0(0) = 1$, $~~~ P_{_{\\vert 1\\rangle}}(t)  =  \\sin^2 \\Omega t/2 $\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003eInitial state $\\vert 1\\rangle$,  $~~~P_1(0) = 1$, $~~~ P_{_{\\vert 1\\rangle}}(t)  =  \\cos^2 \\Omega t/2 $\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ul\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eRabi oscillations in the real world: State-of-the-art (end of 2023!)\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/Bluvstein2023Title.png\u0027 alt=\u0027image ./Figures/Bluvstein2023Title.png\u0027 class=\u0027simage\u0027 style=\u0027height:240px;max-height:240px;\u0027\u003e\u003cp\u003eBluvstein et al, aXiv:2312.03982\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eRabi oscillations in the real world: State-of-the-art (end of 2023!)\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cimg src=\u0027./Figures/Bluvstein2023Rabi.png\u0027 alt=\u0027image ./Figures/Bluvstein2023Rabi.png\u0027 class=\u0027simage\u0027 style=\u0027height:480px;max-height:480px;\u0027\u003e\u003cp\u003eBluvstein et al, aXiv:2312.03982\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eState preparation: State-of-the-art (end of 2023!)\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003e$\\vert \\Psi\\rangle_{\\rm ask} = \\textstyle{1\\over\\sqrt{2}}(\\vert 0000\\rangle+\\vert 1111\\rangle)$\u003c/p\u003e\u003cimg src=\u0027./Figures/Bluvstein2023Rho.png\u0027 alt=\u0027image ./Figures/Bluvstein2023Rho.png\u0027 class=\u0027simage\u0027 style=\u0027height:360px;max-height:360px;\u0027\u003e\u003cp\u003e$\\rho_{\\rm meas}$, Bluvstein et al, aXiv:2312.03982\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eSingle-qubit rotations\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/QIC5.1.mp4\u0027 title=\u0027iframe ./Figures/QIC5.1.mp4\u0027 class=\u0027sframe\u0027 style=\u0027height:1600px;max-height:1600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e${\\sf R}_y^{\\Theta}$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/BlochDM_Ry.html\u0027 title=\u0027iframe ./Figures/BlochDM_Ry.html\u0027 class=\u0027sframe\u0027 style=\u0027height:1600px;max-height:1600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eSingle-qubit rotations\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/QIC5.2.mp4\u0027 title=\u0027iframe ./Figures/QIC5.2.mp4\u0027 class=\u0027sframe\u0027 style=\u0027height:1600px;max-height:1600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003e${\\sf R}_x^{\\Theta}$\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/BlochDM_Rx.html\u0027 title=\u0027iframe ./Figures/BlochDM_Rx.html\u0027 class=\u0027sframe\u0027 style=\u0027height:1600px;max-height:1600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eSingle-qubit rotations\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/QIC5.3.mp4\u0027 title=\u0027iframe ./Figures/QIC5.3.mp4\u0027 class=\u0027sframe\u0027 style=\u0027height:1600px;max-height:1600px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eHadamard\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027spancenter\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003ciframe src=\u0027./Figures/BlochDM_Hxz.html\u0027 title=\u0027iframe ./Figures/BlochDM_Hxz.html\u0027 class=\u0027sframe\u0027 style=\u0027height:1600px;max-height:1600px;\u0027\u003e\u003c/iframe\u003e\u003cp\u003e$\\Omega=\\Delta$, $\\phi=0$\u003c/p\u003e\u003c/div\u003e", "style": ""}, {"canvas": "", "html": "\u003cdiv class=\u0027title\u0027 style=\u0027font-size:1.25em\u0027\u003e\u003cp\u003eQIC6 Summary: Decoherence\u003c/p\u003e\u003c/div\u003e\u003cdiv class=\u0027left\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eHadamard ($\\phi = 0$)\u003c/p\u003e\u003ciframe src=\u0027./Figures/BlochDM_Hxz.png\u0027 title=\u0027iframe ./Figures/BlochDM_Hxz.png\u0027 class=\u0027sframe\u0027 style=\u0027height:720px;max-height:720px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e\u003cdiv class=\u0027right\u0027 style=\u0027font-size:1.00em\u0027\u003e\u003cp\u003eHadamard ($\\phi = \\pi/2$)\u003c/p\u003e\u003ciframe src=\u0027./Figures/BlochDM_Hyz.html\u0027 title=\u0027iframe ./Figures/BlochDM_Hyz.html\u0027 class=\u0027sframe\u0027 style=\u0027height:720px;max-height:720px;\u0027\u003e\u003c/iframe\u003e\u003c/div\u003e", "style": ""}]};
+		var logoURL = "././presentation_files/Durham_University_Logo.png";
+		var leftHanded = true;
+		var drawingHelp = "lines";//"lines" or "dots";
+	  var drawingHelpIntensity = 0.04;
+	  var roundTableCallBack = null;
+		var roundTableServer = "";
+		var roundTableAuth = "";
+		var roundTableExit = null;
+		var presentationServer = "";
+		var presenter = false;
+		var presentationSemaphore = 1;
+	 	window.onload = initApp();
+ 	</script>
+
+</body>
